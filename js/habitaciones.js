@@ -1,7 +1,7 @@
 const CLAVE_HABITACIONES = 'habitacionesHuellas'; // Clave para almacenar las habitaciones en localStorage
 
 const habitacionesIniciales = [// Datos de para inicializar las habitaciones
-  { id: 1, nombre: "ALOJAMIENTO", precio: 340000, imagen: "", descripcion: "Elegante esia cotancn cama gfgfgfgfgdfgdfgddfgdfgdfgdfghghghg.", mostrar: true },
+  { id: 1, nombre: "ALOJAMIENTO", precio: 340000, imagen: "huellas_de_la_pola\assets\habitaciones\habitacion1.png", descripcion: "Elegante esia cotancn cama gfgfgfgfgdfgdfgddfgdfgdfgdfghghghg.", mostrar: true },
   { id: 2, nombre: "Habitación 2", precio: 700000, imagen: "", descripcion: "Suite de lujo con balcón.", mostrar: true },
   { id: 3, nombre: "Habitación 3", precio: 250000, imagen: ".", descripcion: "Habitación temática botánica.", mostrar: true },
   { id: 4, nombre: "Habitación 4", precio: 800000, imagen: ".", descripcion: "Suite familiar espaciosa.", mostrar: true },
