@@ -55,7 +55,7 @@
               <a class="nav-link" href="../index.html">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Habitaciones</a>
+              <a class="nav-link" href="../html/habitaciones.html">Habitaciones</a>
             </li>
 
             <li class="nav-item">
@@ -92,77 +92,52 @@
 
     <!-- FORMULARIO -->
     <section class="container my-5">
-      <div class="row align-items-center g-5">
+  <div class="row align-items-center g-5">
 
-        <div class="col-12 col-md-6">
-          <h2 class="mb-2">Contáctanos</h2>
-          <p class="mb-4">¿Tienes alguna pregunta o quieres hacer una reserva? Escríbenos y te responderemos lo antes posible.</p>
+    <div class="col-12 col-md-6">
+      <h2 class="mb-2">Contáctanos</h2>
+      <p class="mb-4">¿Tienes alguna pregunta o quieres hacer una reserva? Escríbenos y te responderemos lo antes posible.</p>
 
-          <form action="https://formspree.io/f/{FORM_ID}" method="POST">
-
-            <div class="mb-3">
-              <label for="full-name" class="form-label">Nombre completo</label>
-              <input type="text" class="form-control" id="full-name" name="full-name" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="email-address" class="form-label">Correo</label>
-              <input type="email" class="form-control" id="email-address" name="email-address" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="support-type" class="form-label">Tipo de soporte</label>
-              <select class="form-select" id="support-type" name="support-type" required>
-                <option value="" disabled selected hidden>Selecciona una opción</option>
-                <option value="technical-issue">Problema técnico</option>
-                <option value="billing-inquiry">Atención al cliente</option>
-                <option value="account-help">Ayuda con la cuenta</option>
-                <option value="general-question">Pregunta general</option>
-              </select>
-            </div>
-
-            <div class="mb-3">
-              <label for="subject-of-request" class="form-label">Asunto</label>
-              <input type="text" class="form-control" id="subject-of-request" name="subject-of-request" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="detailed-description" class="form-label">Descripción</label>
-              <textarea class="form-control" id="detailed-description" name="detailed-description" rows="4" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-enviar w-100" style="border-radius: 32px">Enviar</button>
-
-          </form>
+      <form action="https://formspree.io/f/xjgjwolj" method="POST">
+        <div class="mb-3">
+          <label for="full-name" class="form-label">Nombre completo</label>
+          <input type="text" class="form-control" id="full-name" name="full-name" required>
         </div>
 
-        <div class="col-12 col-md-6 d-none d-md-block">
-          <div class="row g-3">
-            <div class="col-6">
-              <img src="../assets/fotos_page_contacto/imagenContacto.png" alt="Foto 1"
-                class="img-fluid rounded-4 shadow"
-                style="width: 100%; height: 280px; object-fit: cover;">
-            </div>
-            <div class="col-6">
-              <img src="../assets/fotos_page_contacto/imagenContacto 2.png" alt="Foto 2"
-                class="img-fluid rounded-4 shadow"
-                style="width: 100%; height: 280px; object-fit: cover;">
-            </div>
-            <div class="col-6">
-              <img src="../assets/fotos_page_contacto/imagenContacto 3.png" alt="Foto 3"
-                class="img-fluid rounded-4 shadow"
-                style="width: 100%; height: 280px; object-fit: cover;">
-            </div>
-            <div class="col-6">
-              <img src="../assets/fotos_page_contacto/imagenContacto 4.png" alt="Foto 4"
-                class="img-fluid rounded-4 shadow"
-                style="width: 100%; height: 280px; object-fit: cover;">
-            </div>
-          </div>
+        <div class="mb-3">
+          <label for="email-address" class="form-label">Correo</label>
+          <!-- correo del remitente -->
+          <input type="email" class="form-control" id="email-address" name="email" required>
         </div>
 
-      </div>
-    </section>
+        <div class="mb-3">
+          <label for="support-type" class="form-label">Tipo de soporte</label>
+          <select class="form-select" id="support-type" name="support-type" required>
+            <option value="" disabled selected hidden>Selecciona una opción</option>
+            <option value="technical-issue">Problema técnico</option>
+            <option value="billing-inquiry">Atención al cliente</option>
+            <option value="account-help">Ayuda con la cuenta</option>
+            <option value="general-question">Pregunta general</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="subject-of-request" class="form-label">Asunto</label>
+          <input type="text" class="form-control" id="subject-of-request" name="subject-of-request" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="detailed-description" class="form-label">Descripción</label>
+          <textarea class="form-control" id="detailed-description" name="detailed-description" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-enviar w-100" style="border-radius: 32px">Enviar</button>
+      </form>
+    </div>
+    <div class="col-12 col-md-6">
+      <img src="../assets/banner-contacto/bannerContacto.webp" alt="Imagen de contacto" class="img-fluid rounded">
+  </div>
+</section>
     <!-- FIN FORMULARIO -->
 
     <!-- FOOTER -->

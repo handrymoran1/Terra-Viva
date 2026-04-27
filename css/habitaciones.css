@@ -1,0 +1,98 @@
+/* ══════════════════════════════
+   VARIABLES CORPORATIVAS
+══════════════════════════════ */
+:root {
+  --color-primary: #ccc5b7;
+  --color-secondary: #ffffff;
+  --color-accent: #e5bb89;
+  --color-dark: #6f5d44;
+  --color-button: #5FA62D;
+  --color-opcional: #1B4015;
+  --font-title: "Berkshire Swash", cursive;
+  --font-body: "Yrsa", serif;
+}
+
+/* ══════════════════════════════
+   FUENTE GLOBAL DEL BODY
+══════════════════════════════ */
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3 { font-family: var(--font-title); }
+p, a, li   { font-family: var(--font-body); }
+
+
+/* ══════════════════════════════
+   HABITACIONES 
+══════════════════════════════ */
+
+.habitaciones-section {
+   padding-bottom: 80px !important;
+}
+
+.card-habitacion{
+    border-radius: 18px;
+    overflow: hidden;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .img-habitacion{
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .card-texto{
+    padding: 20px;
+  }
+
+  .card-habitacion h6{
+    font-size: 25px;;
+    font-weight: 700;
+  }
+
+  .precio{
+    font-size: .9rem;
+    color: #6b5b3e;
+    font-weight: 600;
+  }
+
+  .texto-card-habitacion{
+    font-size: .8rem;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+
+  .titulo-habitaciones{
+    margin-top: 140px !important;
+    font-family: var(--font-body);
+    color: #244d22;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  .btn-reservar {
+    margin: 20px;
+    font-family: var(--font-body);
+    background-color: var(--color-button);
+    border: none;
+    border-radius: 20px;
+    padding: 5px;
+    color: #ffffff;
+    width: 150px !important;
+  }
+
+  .btn-reservar:hover {
+    background-color: var(--color-accent) !important;
+    color: #1B4015;
+  }
+
+  .linea{
+    margin-bottom: 80px !important;
+    width: 90px;
+    height: 3px;
+    background: #caa95a;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
