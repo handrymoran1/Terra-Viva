@@ -1,15 +1,16 @@
 const CLAVE_HABITACIONES = 'habitacionesHuellas';
 
-// Datos iniciales con placeholder de imagen vacío
-const habitacionesIniciales = [
-  { id: 1, nombre: "Glamour", precio: 340000, imagen: "../assets/habitaciones/habitacion1.png", descripcion: "Elegante habitación con cama confortable.", mostrar: true },
-  { id: 2, nombre: "Suite", precio: 700000, imagen: "../assets/habitaciones/habitacion2.png", descripcion: "Suite de lujo con balcón.", mostrar: true },
-  { id: 3, nombre: "Botánica", precio: 250000, imagen: "../assets/habitaciones/habitacion3.png", descripcion: "Habitación temática botánica.", mostrar: true },
-  { id: 4, nombre: "Espaciosa", precio: 800000, imagen: "../assets/habitaciones/habitacion4.png", descripcion: "Suite familiar espaciosa.", mostrar: true },
-  { id: 5, nombre: "Comoda", precio: 200000, imagen: "../assets/habitaciones/habitacion5.png", descripcion: "Opción cómoda y funcional.", mostrar: true },
-  { id: 6, nombre: "Queen", precio: 420000, imagen: "../assets/habitaciones/habitacion6.png", descripcion: "Vista a la ciudad, cama Queen.", mostrar: true },
-  { id: 7, nombre: "Jacuzzi", precio: 550000, imagen: "../assets/habitaciones/habitacion7.png", descripcion: "Con jacuzzi y terraza.", mostrar: true },
-  { id: 8, nombre: "Practica", precio: 310000, imagen: "../assets/habitaciones/habitacion8.png", descripcion: "Económica pero acogedora.", mostrar: true },
+const habitacionesIniciales = [// Datos de para inicializar las habitaciones
+  { id: 1, nombre: "ALOJAMIENTO", precio: 340000, imagen: "huellas_de_la_pola\assets\habitaciones\habitacion1.png", descripcion: "Elegante esia cotancn cama gfgfgfgfgdfgdfgddfgdfgdfgdfghghghg.", mostrar: true },
+  { id: 2, nombre: "Habitación 2", precio: 700000, imagen: "", descripcion: "Suite de lujo con balcón.", mostrar: true },
+  { id: 3, nombre: "Habitación 3", precio: 250000, imagen: ".", descripcion: "Habitación temática botánica.", mostrar: true },
+  { id: 4, nombre: "Habitación 4", precio: 800000, imagen: ".", descripcion: "Suite familiar espaciosa.", mostrar: true },
+  { id: 5, nombre: "Habitación 5", precio: 200000, imagen: ".", descripcion: "Opción cómoda y funcional.", mostrar: true },
+  { id: 6, nombre: "Habitación 6", precio: 420000, imagen: ".", descripcion: "Vista a la ciudad, cama Queen.", mostrar: true },
+  { id: 7, nombre: "Habitación 7", precio: 550000, imagen: ".", descripcion: "Con jacuzzi y terraza.", mostrar: true },
+  { id: 8, nombre: "Habitación 8", precio: 310000, imagen: ".", descripcion: "Económica pero acogedora.", mostrar: true },
+  { id: 9, nombre: "Habitación 9", precio: 670000, imagen: ".", descripcion: "Doble con vistas panorámicas.", mostrar: true },
+  { id: 10, nombre: "Habitación 10", precio: 920000, imagen: ".", descripcion: "Presidencial con servicio 24h.", mostrar: true }
 ];
 
 // localstorage es la persistencia
