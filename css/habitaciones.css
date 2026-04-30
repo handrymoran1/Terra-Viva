@@ -52,22 +52,21 @@ p, a, li   { font-family: var(--font-body); }
   font-family: var(--font-body);
   font-size: 17px;
   background-color: var(--color-button);
-  border: none;
   color: #ffffff;
   width: 150px !important;
 }
 
 .custom-btn-primary:hover {
-  background-color: var(--color-secondary) !important;
+  background-color: var(--color-accent) !important;
   color: var(--color-dark);
-  
+  border: 3px solid var(--color-accent);
 }
 
 .custom-btn-secondary {
   font-family: var(--font-body);
   font-size: 17px;
-  background-color: transparent;
-  border: 2px solid var(--color-secondary);
+  background-color: var(--color-button);
+  border: 3px solid var(--color-secondary);
   color: #ffffff;
   width: 150px !important;
 }
