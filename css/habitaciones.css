@@ -60,6 +60,7 @@ p, a, li   { font-family: var(--font-body); }
 .custom-btn-primary:hover {
   background-color: var(--color-secondary) !important;
   color: var(--color-dark);
+  
 }
 
 .custom-btn-secondary {

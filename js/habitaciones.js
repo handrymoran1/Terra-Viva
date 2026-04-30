@@ -1,16 +1,17 @@
-const CLAVE_HABITACIONES = 'habitacionesHuellas';
+localStorage.removeItem('habitacionesHuellas');
+// const CLAVE_HABITACIONES = 'habitacionesHuellas';   (para cambiar la constante sin que el locar storage deje las viejas)
 
 const habitacionesIniciales = [// Datos de para inicializar las habitaciones
-  { id: 1, nombre: "ALOJAMIENTO", precio: 340000, imagen: "huellas_de_la_pola\assets\habitaciones\habitacion1.png", descripcion: "Elegante esia cotancn cama gfgfgfgfgdfgdfgddfgdfgdfgdfghghghg.", mostrar: true },
-  { id: 2, nombre: "Habitación 2", precio: 700000, imagen: "", descripcion: "Suite de lujo con balcón.", mostrar: true },
-  { id: 3, nombre: "Habitación 3", precio: 250000, imagen: ".", descripcion: "Habitación temática botánica.", mostrar: true },
-  { id: 4, nombre: "Habitación 4", precio: 800000, imagen: ".", descripcion: "Suite familiar espaciosa.", mostrar: true },
-  { id: 5, nombre: "Habitación 5", precio: 200000, imagen: ".", descripcion: "Opción cómoda y funcional.", mostrar: true },
-  { id: 6, nombre: "Habitación 6", precio: 420000, imagen: ".", descripcion: "Vista a la ciudad, cama Queen.", mostrar: true },
-  { id: 7, nombre: "Habitación 7", precio: 550000, imagen: ".", descripcion: "Con jacuzzi y terraza.", mostrar: true },
-  { id: 8, nombre: "Habitación 8", precio: 310000, imagen: ".", descripcion: "Económica pero acogedora.", mostrar: true },
-  { id: 9, nombre: "Habitación 9", precio: 670000, imagen: ".", descripcion: "Doble con vistas panorámicas.", mostrar: true },
-  { id: 10, nombre: "Habitación 10", precio: 920000, imagen: ".", descripcion: "Presidencial con servicio 24h.", mostrar: true }
+  { id: 1, nombre: "la solitaria", precio: 340000, imagen: "huellas_de_la_pola/assets/habitaciones/habitacion1.png", descripcion: "Elegante esia cotancador cama .", mostrar: true },
+  { id: 2, nombre: "la de siempre", precio: 10000, imagen: "assets/habitaciones/habitacion2.png", descripcion: "Suite de lujo con balcón.", mostrar: true },
+  { id: 3, nombre: "la clasica  ", precio: 250000, imagen: "assets/habitaciones/habitacion3.png", descripcion: "Habitación con colores clasicos enfocadad en el confort", mostrar: true },
+  { id: 4, nombre: "cuarto terra", precio: 800000, imagen: "assets/habitaciones/habitacion4.png", descripcion: "habitacion con colores tierra muy calida para ser real.", mostrar: true },
+  { id: 5, nombre: "cuarto africa", precio: 20000, imagen: "assets/habitaciones/habitacion5.png", descripcion: "habitacion africa con mini tematica de africa.", mostrar: true },
+  { id: 6, nombre: "la vanguardia", precio: 42000, imagen: "assets/habitaciones/habitacion6.png", descripcion: "Vista a la ciudad, cama Queen.", mostrar: true },
+  { id: 7, nombre: "vino tintico", precio: 550000, imagen: "assets/habitaciones/habitacion7.png", descripcion: "Con jacuzzi y terraza.", mostrar: true },
+  { id: 8, nombre: "la frescuraa", precio: 310000, imagen: "assets/habitaciones/habitacion8.png", descripcion: "Económica pero acogedora.", mostrar: true },
+  { id: 9, nombre: "2 pa 2 ", precio: 670000, imagen: "assets/habitaciones/habitacion9.png", descripcion: "Doble con vistas panorámicas.", mostrar: true },
+  { id: 10, nombre: "Tropical ",precio: 9200, imagen: "assets/habitaciones/habitacion10.png", descripcion: "Presidencial con servicio 24h.", mostrar: true }
 ];
 
 // localstorage es la persistencia
