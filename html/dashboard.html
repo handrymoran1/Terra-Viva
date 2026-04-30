@@ -44,20 +44,20 @@
           class="collapse navbar-collapse justify-content-evenly"
           id="navbarNav"
         >
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="../index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="habitaciones.html">Habitaciones</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="nosotros.html">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contactanos.html">Contactanos</a>
-            </li>
-          </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../html/habitaciones.html">Habitaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../html/contactanos.html">Contactanos</a>
+          </li>
+        </ul>
           <div class="d-flex gap-2">
             <button
               class="btn custom-btn-primary btn-sm"
@@ -84,7 +84,7 @@
             <div class="card-body">
               <h5 class="card-title">Habitaciones disponibles</h5>
               <p class="card-text">
-                <span>0</span>
+                <span id="contadorDisponible">0</span>
               </p>
             </div>
           </div>
@@ -94,7 +94,7 @@
             <div class="card-body">
               <h5 class="card-title">Habitaciones ocupadas</h5>
               <p class="card-text">
-                <span>0</span>
+                <span id="contadorOcupadas">0</span>
               </p>
             </div>
           </div>
