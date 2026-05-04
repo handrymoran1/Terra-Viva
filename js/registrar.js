@@ -3,6 +3,8 @@ const textoAlerta = document.getElementById("textoAlerta");
 const textoEmail = document.getElementById("textoEmail");
 const inputEmail = document.getElementById("inputCorreo");
 const textoTelefono = document.getElementById("textoTelefono");
+const textoPassword = document.getElementById("textoPassword");
+const confirmarPassword = document.getElementById("textoConfirmarPassword");
 
 btnRegistrar.addEventListener("click", function (e) {
   e.preventDefault();
@@ -13,6 +15,8 @@ function registrarUsuario() {
   const nombre = document.getElementById("inputNombre").value;
   const email = document.getElementById("inputCorreo").value;
   const telefono = document.getElementById("inputTelefono").value;
+  const password = document.getElementById("inputPassword").value;
+  const inputPasswordDos = document.getElementById("inputPasswordDos").value;
 
   let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
@@ -34,9 +38,9 @@ function registrarUsuario() {
     textoAlerta.innerHTML = "<h5>¡Ingrese su nombre completo primero! ⚠️<h5>";
     return;
   }
-//en esta verificamos que el correo no exista y despues que no esté vacío el campo
+  //en esta verificamos que el correo no exista y despues que no esté vacío el campo
   for (let i = 0; i < usuarios.length; i++) {
-    if (usuarios[i].telefono === telefono) {
+    if (usuarios[i].email === email) {
       existeEmail = true;
       textoEmail.innerHTML = `<h5>Este correo ya está registrado.</h5>`;
       return;
@@ -44,10 +48,10 @@ function registrarUsuario() {
   }
 
   if (email.trim() === "") {
-    textoEmail.innerHTML = "<h5>¡Ingrese su nombre completo! ⚠️<h5>";
+    textoEmail.innerHTML = "<h5>¡Ingrese su correo! ⚠️<h5>";
     return;
   }
-
+  //esta es la misma lógica para el numero de telefono
   for (let i = 0; i < usuarios.length; i++) {
     if (usuarios[i].telefono === telefono) {
       existeTelefono = true;
@@ -56,15 +60,32 @@ function registrarUsuario() {
     }
   }
 
-  if (telefono.trim() === "") {
+  if (telefono.trim() === "" || telefono.length < 10) {
     textoTelefono.innerHTML = "<h5>¡Ingrese su telefono completo! ⚠️<h5>";
     return;
   }
 
+  if (password.trim() === "" || password.length < 10) {
+    textoPassword.innerHTML =
+      "<h5>¡La contraseña debe tener al menos 10 caracteres! ⚠️<h5>";
+    return;
+  }
 
-  usuarios.push({ nombre: nombre, email: email, telefono: telefono});
+  if (inputPasswordDos !== password) {
+    confirmarPassword.innerHTML = "<h5>Las contraseñas no coinciden ⚠️</h5>";
+    confirmarPassword.focus();
+    return;
+  }
+
+  usuarios.push({
+    nombre: nombre,
+    email: email,
+    telefono: telefono,
+    password: password,
+  });
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
   textoAlerta.innerHTML = "";
 
   alert("Usuario guardado.");
+  window.location.href = "../html/dashboard.html";
 }
