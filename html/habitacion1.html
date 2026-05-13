@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Detalle Habitación</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Yrsa:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  >
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="../css/habitacion.css">
+</head>
+
+<body>
+
+<div class="container seccion-detalle">
+  <div class="row g-4 align-items-start">
+
+    <!-- ── COLUMNA IZQUIERDA — fotos ── -->
+    <div class="col-12 col-md-6">
+
+      <img
+        id="fotoPrincipal"
+        src="../assets/habitacion1/01.png"
+        alt="Foto principal"
+        class="foto-principal mb-3"
+      >
+
+      <div class="row g-2">
+        <div class="col-4">
+          <img
+            src="../assets/habitacion1/02.png"
+            alt="Vista 1"
+            class="foto-miniatura activa"
+            onclick="cambiarFoto(this)"
+          >
+        </div>
+        <div class="col-4">
+          <img
+            src="../assets/habitacion1/03.png"
+            alt="Vista 2"
+            class="foto-miniatura"
+            onclick="cambiarFoto(this)"
+          >
+        </div>
+        <div class="col-4">
+          <img
+            src="../assets/habitacion1/04.jpg"
+            alt="Vista 3"
+            class="foto-miniatura"
+            onclick="cambiarFoto(this)"
+          >
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── COLUMNA DERECHA — descripción ── -->
+    <div class="col-12 col-md-6">
+
+      <p class="text-muted mb-1">Habitación</p>
+      <h1 class="detalle-nombre">Suite Colonial</h1>
+
+      <div class="precio mb-3">
+        $340.000 <span class="precio-noche">/ noche</span>
+      </div>
+
+      <p class="detalle-descripcion mb-4">
+        Elegante habitación con cama doble, decoración colonial y vista al patio interior.
+        Incluye baño privado, aire acondicionado y desayuno continental.
+        Ideal para parejas o viajeros que buscan una experiencia auténtica en el corazón de Guaduas.
+      </p>
+
+      <!-- Amenidades -->
+      <div class="d-flex flex-wrap gap-2 mb-4">
+        <span class="badge-amenidad"><i class="bi bi-wifi"></i> WiFi</span>
+        <span class="badge-amenidad"><i class="bi bi-snow"></i> Aire acondicionado</span>
+        <span class="badge-amenidad"><i class="bi bi-tv"></i> TV</span>
+        <span class="badge-amenidad"><i class="bi bi-droplet"></i> Baño privado</span>
+      </div>
+
+    
+
+      <!-- ✅ BUSCADOR -->
+    <section class="detalle-buscador-section mt-3">
+  <div class="detalle-buscador-card">
+
+    <div class="detalle-buscador-campo">
+      <label for="fechaLlegada" class="detalle-buscador-label">Llegada</label>
+      <input type="date" id="fechaLlegada" class="detalle-buscador-input">
+    </div>
+
+    <div class="detalle-buscador-divider"></div>
+
+    <div class="detalle-buscador-campo">
+      <label for="fechaSalida" class="detalle-buscador-label">Salida</label>
+      <input type="date" id="fechaSalida" class="detalle-buscador-input">
+    </div>
+
+    <div class="detalle-buscador-divider"></div>
+
+    <div class="detalle-buscador-campo">
+      <label for="huespedes" class="detalle-buscador-label">Huéspedes</label>
+      <select id="huespedes" class="detalle-buscador-input">
+        <option>1 adulto</option>
+        <option selected>2 adultos</option>
+        <option>3 adultos</option>
+        <option>4 adultos</option>
+        <option>2 adultos + 1 niño</option>
+        <option>2 adultos + 2 niños</option>
+      </select>
+    </div>
+
+    <button class="detalle-buscador-btn" id="btnBuscar">
+      Buscar disponibilidad
+    </button>
+
+  </div>
+</section>  
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

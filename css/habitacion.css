@@ -1,0 +1,215 @@
+/* ══════════════════════════════
+   VARIABLES CORPORATIVAS
+══════════════════════════════ */
+:root {
+  --color-primary: #ccc5b7;
+  --color-secondary: #ffffff;
+  --color-accent: #e5bb89;
+  --color-dark: #6f5d44;
+  --color-button: #5FA62D;
+  --color-opcional: #1B4015;
+  --font-title: "Berkshire Swash", cursive;
+  --font-body: "Yrsa", serif;
+}
+
+
+/* ══════════════════════════════
+   FUENTE GLOBAL DEL BODY
+══════════════════════════════ */
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3 { font-family: var(--font-title); }
+p, a, li   { font-family: var(--font-body); }
+
+
+/* ══════════════════════════════
+   DETALLE HABITACIÓN
+══════════════════════════════ */
+
+body {
+  background-color: #f9f8f5;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.seccion-detalle {
+  padding: 3rem 0;
+}
+
+/* ── Fotos ── */
+.foto-principal {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.foto-miniatura {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+  display: block;
+}
+
+
+/* ── Texto ── */
+.detalle-nombre {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-opcional);
+  margin-bottom: 0.5rem;
+}
+
+.precio {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-button);
+}
+
+.precio-noche {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6c757d;
+}
+
+.detalle-descripcion {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+/* ── Amenidades ── */
+.badge-amenidad {
+  background-color: #e9f5ee;
+  color: #2d6a4f;
+  border: 1px solid #b7dfc9;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ══════════════════════════════
+   MÓVIL
+══════════════════════════════ */
+@media (max-width: 768px) {
+  .foto-principal {
+    height: 220px;
+  }
+
+  .foto-miniatura {
+    height: 90px;
+  }
+
+  .detalle-nombre {
+    font-size: 1.5rem;
+  }
+
+  .precio {
+    font-size: 1.4rem;
+  }
+}
+
+/* ══════════════════════════════
+   BUSCADOR DETALLE HABITACIÓN
+══════════════════════════════ */
+.detalle-buscador-section {
+  margin-top: 16px;
+  position: relative;
+  z-index: 3;
+}
+
+.detalle-buscador-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e0ddd6;
+  border-radius: 16px;
+  padding: 10px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.detalle-buscador-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 150px;
+}
+
+.detalle-buscador-label {
+  font-size: .8rem;
+  font-weight: 600;
+  color: #555;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.detalle-buscador-input {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: .95rem;
+  color: #333;
+  background: #fff;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.detalle-buscador-input:focus {
+  border-color: #5FA62D;
+  box-shadow: 0 0 0 3px rgba(95, 166, 45, 0.15);
+}
+
+.detalle-buscador-divider {
+  width: 1px;
+  height: 50px;
+  background: #e0ddd6;
+  align-self: flex-end;
+  margin-bottom: 4px;
+}
+
+.detalle-buscador-btn {
+  background: #5FA62D;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .2s ease;
+}
+
+.detalle-buscador-btn:hover {
+  background-color:  var(--color-opcional);
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .detalle-buscador-card {
+    flex-direction: column;
+  }
+
+  .detalle-buscador-divider {
+    display: none;
+  }
+
+  .detalle-buscador-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

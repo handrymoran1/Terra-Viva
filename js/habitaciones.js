@@ -1,10 +1,9 @@
 const CLAVE_HABITACIONES = "habitacionesHuellas";
 
 const habitacionesIniciales = [
-  // Datos de para inicializar las habitaciones
   {
     id: 1,
-    nombre: "ALOJAMIENTO",
+    nombre: "dsdsds",
     precio: 340000,
     imagen: "../assets/habitaciones/habitacion1.png",
     descripcion:
@@ -85,26 +84,27 @@ const habitacionesIniciales = [
   },
 ];
 
-// localstorage es la persistencia
 
+// ✅ CORREGIDO — borra el localStorage viejo y carga siempre los datos frescos del JS
+// Si quieres preservar cambios del admin, comenta la primera línea y descomenta el if
 function inicializarHabitaciones() {
-  if (!localStorage.getItem(CLAVE_HABITACIONES)) {
-    localStorage.setItem(
-      CLAVE_HABITACIONES,
-      JSON.stringify(habitacionesIniciales),
-    );
-  }
+  localStorage.removeItem(CLAVE_HABITACIONES); // ← limpia datos viejos
+  localStorage.setItem(CLAVE_HABITACIONES, JSON.stringify(habitacionesIniciales));
 }
+
 
 function obtenerHabitaciones() {
   return JSON.parse(localStorage.getItem(CLAVE_HABITACIONES)) || [];
 }
 
+
 function guardarHabitaciones(habitaciones) {
   localStorage.setItem(CLAVE_HABITACIONES, JSON.stringify(habitaciones));
 }
 
+
 // utilidades
+
 
 function generarId() {
   const habitaciones = obtenerHabitaciones();
@@ -112,11 +112,14 @@ function generarId() {
   return Math.max(...habitaciones.map((h) => h.id)) + 1;
 }
 
+
 function placeholderImagen() {
   return "https://placehold.co/300x200?text=Sin+imagen";
 }
 
+
 // modelado crud
+
 
 function agregarHabitacion(nombre, precio, descripcion, imagen) {
   const habitaciones = obtenerHabitaciones();
@@ -133,6 +136,7 @@ function agregarHabitacion(nombre, precio, descripcion, imagen) {
   return nueva;
 }
 
+
 function editarHabitacion(id, nombre, precio, descripcion, imagen) {
   const habitaciones = obtenerHabitaciones();
   const index = habitaciones.findIndex((h) => h.id === id);
@@ -140,10 +144,11 @@ function editarHabitacion(id, nombre, precio, descripcion, imagen) {
   habitaciones[index].nombre = nombre;
   habitaciones[index].precio = parseFloat(precio);
   habitaciones[index].descripcion = descripcion || "";
-  if (imagen !== undefined) habitaciones[index].imagen = imagen; // si no se pasa, mantiene la anterior
+  if (imagen !== undefined) habitaciones[index].imagen = imagen;
   guardarHabitaciones(habitaciones);
   return true;
 }
+
 
 function eliminarHabitacion(id) {
   if (!confirm("¿Eliminar esta habitación?")) return false;
@@ -152,6 +157,7 @@ function eliminarHabitacion(id) {
   guardarHabitaciones(habitaciones);
   return true;
 }
+
 
 function actualizarVisibilidadHabitacion(id, mostrar) {
   const habitaciones = obtenerHabitaciones();
@@ -162,7 +168,9 @@ function actualizarVisibilidadHabitacion(id, mostrar) {
   }
 }
 
+
 // ajustar habitaciones
+
 
 function ajustarCatalogo() {
   const contenedor = document.getElementById("contenedorHabitaciones");
@@ -196,43 +204,42 @@ function ajustarCatalogo() {
   });
 
   document.querySelectorAll(".btn-reservar").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
+    btn.addEventListener("click", () => {
       const id = parseInt(btn.dataset.id);
       const habitacion = obtenerHabitaciones().find((h) => h.id === id);
       if (habitacion) {
         alert(
-          `Seleccionó ${habitacion.nombre}. Precio: $${habitacion.precio.toLocaleString("es-CO")} / noche.`,
+          `Seleccionó ${habitacion.nombre}. Precio: $${habitacion.precio.toLocaleString("es-CO")} / noche.`
         );
       }
     });
   });
 }
 
+
 function actualizarTodosLosContadores() {
   const spanDisponibles = document.getElementById("contadorDisponible");
   const spanOcupadas = document.getElementById("contadorOcupadas");
 
-  //obtener los datos reales del LocalStorage
   const habitaciones = obtenerHabitaciones();
 
-  // actulizamos disponibles (mostrar: true)
   if (spanDisponibles) {
-    const cantDisponibles = habitaciones.filter(
-      (h) => h.mostrar === true,
-    ).length;
+    const cantDisponibles = habitaciones.filter((h) => h.mostrar === true).length;
     spanDisponibles.textContent = cantDisponibles;
   }
 
-  //actualizar ocupadas con (mostrar: false)
   if (spanOcupadas) {
     const cantOcupadas = habitaciones.filter((h) => h.mostrar === false).length;
     spanOcupadas.textContent = cantOcupadas;
   }
 }
 
+
 // ajustar imagen
 
-let imagenBase64 = null; // almacena la imagen seleccionada en base64
+
+let imagenBase64 = null;
+
 
 function ajustarListaAdmin() {
   const contenedor = document.getElementById("listaHabitacionesAdmin");
@@ -268,14 +275,12 @@ function ajustarListaAdmin() {
     contenedor.appendChild(item);
   });
 
-  // Eventos de edición
   document.querySelectorAll(".btn-editar").forEach((btn) => {
     btn.addEventListener("click", () =>
-      cargarFormularioEdicion(parseInt(btn.dataset.id)),
+      cargarFormularioEdicion(parseInt(btn.dataset.id))
     );
   });
 
-  // Eventos de eliminación
   document.querySelectorAll(".btn-eliminar").forEach((btn) => {
     btn.addEventListener("click", () => {
       if (eliminarHabitacion(parseInt(btn.dataset.id))) {
@@ -286,7 +291,6 @@ function ajustarListaAdmin() {
     });
   });
 
-  // Eventos de visibilidad
   document.querySelectorAll(".toggle-visibilidad").forEach((btn) => {
     btn.addEventListener("click", () => {
       const id = parseInt(btn.dataset.id);
@@ -299,7 +303,9 @@ function ajustarListaAdmin() {
   });
 }
 
+
 // formulario
+
 
 function cargarFormularioEdicion(id) {
   const habitaciones = obtenerHabitaciones();
@@ -310,21 +316,22 @@ function cargarFormularioEdicion(id) {
   document.getElementById("nombre").value = hab.nombre;
   document.getElementById("precio").value = hab.precio;
   document.getElementById("descripcion").value = hab.descripcion || "";
-  document.getElementById("imagenInput").value = ""; // limpiar input file
-  imagenBase64 = hab.imagen; // mantener la imagen anterior por si no se cambia
+  document.getElementById("imagenInput").value = "";
+  imagenBase64 = hab.imagen;
   document.getElementById("tituloFormulario").textContent = "Editar habitación";
 }
+
 
 function resetFormulario() {
   document.getElementById("formularioHabitacion").reset();
   document.getElementById("habitacionId").value = "";
-  document.getElementById("tituloFormulario").textContent =
-    "Agregar nueva habitación";
+  document.getElementById("tituloFormulario").textContent = "Agregar nueva habitación";
   imagenBase64 = null;
 }
 
+
 function manejarEnvioFormulario(e) {
-  e.preventDefault(); //esto es para evitar el acto natural del formulario.
+  e.preventDefault();
   const id = document.getElementById("habitacionId").value;
   const nombre = document.getElementById("nombre").value.trim();
   const precio = document.getElementById("precio").value.trim();
@@ -336,10 +343,8 @@ function manejarEnvioFormulario(e) {
   }
 
   if (id) {
-    // Editar
     editarHabitacion(parseInt(id), nombre, precio, descripcion, imagenBase64);
   } else {
-    // Agregar
     agregarHabitacion(nombre, precio, descripcion, imagenBase64);
   }
 
@@ -349,7 +354,10 @@ function manejarEnvioFormulario(e) {
   actualizarTodosLosContadores();
 }
 
-// Convertir imagen a base64 al seleccionar archivo
+
+// DOMContentLoaded
+
+
 document.addEventListener("DOMContentLoaded", () => {
   inicializarHabitaciones();
   ajustarCatalogo();
@@ -358,13 +366,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("listaHabitacionesAdmin")) {
     ajustarListaAdmin();
 
-    // Configurar formulario
     const form = document.getElementById("formularioHabitacion");
     form.addEventListener("submit", manejarEnvioFormulario);
 
-    document
-      .getElementById("btnCancelar")
-      .addEventListener("click", resetFormulario);
+    document.getElementById("btnCancelar").addEventListener("click", resetFormulario);
 
     const inputImagen = document.getElementById("imagenInput");
     inputImagen.addEventListener("change", (e) => {
