@@ -2,10 +2,8 @@ let btnBuscarDisponibilidad = document.getElementById(
   "btnBuscarDisponibilidad",
 );
 
-btnBuscarDisponibilidad.addEventListener("click", function () {
+btnBuscarDisponibilidad.addEventListener("click", function (e) {
   e.preventDefault();
-  alert("funciona btn");
-
   const llegada = document.getElementById("fechaLlegada").value;
   const salida = document.getElementById("fechaSalida").value;
   const huespedes = document.getElementById("huespedes").value;
