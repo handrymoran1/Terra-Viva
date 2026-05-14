@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const correoValor = inputCorreo.value;
     const passwordValor = inputPassword.value;
 
-    // 1. Verificamos si los formatos son correctos
+    // verificamos si los formatos son correctos
     const correoEsValido = validarFormatoCorreo(correoValor);
     const passwordEsValida = validarFormatoPassword(passwordValor);
 
@@ -61,17 +61,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
       return;
     }
-    //verificar contraseña admin.
-    if (correoValor === "admin@gmail.com" && passwordValor === "Admin64!") {
-      console.log("¡Bienvenido Admin!");
-      window.location.href = "../html/dashboard.html";
-    }
 
     //lógica para usuarios normales
-    else {
-      console.log("Usuario normal detectado. Iniciando sesión...");
-      alert("Inicio de sesión exitoso (Usuario Normal)");
-      window.location.href = "../html/perfil_usuario.html";
+    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    let usuarioEncontrado = null;
+    let passwordCorrecta = false;
+
+    // Buscamos el correo en la lista
+    for (let i = 0; i < usuarios.length; i++) {
+      if (usuarios[i].email === correoValor) {
+        usuarioEncontrado = usuarios[i];
+
+        // Verificamos la contraseña
+        if (usuarios[i].password === passwordValor) {
+          passwordCorrecta = true;
+        }
+        break; // Salimos del ciclo porque ya encontramos el correo
+      }
+    }
+
+    if (usuarioEncontrado && passwordCorrecta) {
+      localStorage.setItem(
+        "usuarioLogueado",
+        JSON.stringify(usuarioEncontrado),
+      );
+      alert("¡Te damos la bienvenida, " + usuarioEncontrado.nombre + "!");
+
+      if (
+        correoValor === "admin@gmail.com" &&
+        passwordValor === "Admin123456789*"
+      ) {
+        console.log("¡Bienvenido Admin!");
+        window.location.href = "../html/dashboard.html";
+      } else {
+        console.log("Usuario normal detectado.");
+        window.location.href = "../html/perfil_usuario.html";
+      }
+    } else if (usuarioEncontrado && !passwordCorrecta) {
+      alert("La contraseña es incorrecta.");
+    } else {
+      alert("El usuario no existe. Serás redirigido al registro.");
+      window.location.href = "../html/registrar.html";
     }
   });
 });

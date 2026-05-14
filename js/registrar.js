@@ -85,7 +85,5 @@ function registrarUsuario() {
   });
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
   textoAlerta.innerHTML = "";
-
-  alert("Usuario guardado.");
-  window.location.href = "../html/dashboard.html";
+  window.location.href = "../html/iniciarSesion.html";
 }

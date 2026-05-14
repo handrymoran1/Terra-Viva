@@ -277,7 +277,7 @@ function pintarListaAdmin() {
   // Usamos un ciclo for clásico como te gusta
   for (let i = 0; i < habitaciones.length; i++) {
     const hab = habitaciones[i];
-    
+
     // Definimos textos y colores según el estado
     let estadoTexto = "";
     let estadoColor = "";
@@ -297,7 +297,7 @@ function pintarListaAdmin() {
 
     const item = document.createElement("div");
     item.className = "list-group-item d-flex align-items-center";
-    
+
     item.innerHTML = `
       <div class="me-3">
         <img src="${imagenSrc}" alt="${hab.nombre}" style="width: 80px; height: 60px; object-fit: cover; border-radius: 5px;">
@@ -325,13 +325,12 @@ function activarEventosAdmin() {
   if (!contenedor) return;
 
   // Delegación de eventos: escuchamos clics en el contenedor padre
-  contenedor.addEventListener("click", function(e) {
-    
+  contenedor.addEventListener("click", function (e) {
     // 1. Lógica para ELIMINAR
     if (e.target.classList.contains("btn-eliminar")) {
       const idStr = e.target.dataset.id;
       const idNum = parseInt(idStr);
-      
+
       if (confirm("¿Seguro quieres eliminar esta habitación?")) {
         eliminarHabitacion(idNum); // Usamos tu función CRUD existente
         pintarListaAdmin(); // Volvemos a pintar
@@ -352,7 +351,7 @@ function activarEventosAdmin() {
       const idStr = e.target.dataset.id;
       const idNum = parseInt(idStr);
       const estadoActualStr = e.target.dataset.mostrar;
-      
+
       // Convertimos el string "true"/"false" a booleano real
       let estadoActual = false;
       if (estadoActualStr === "true") {
@@ -361,7 +360,7 @@ function activarEventosAdmin() {
 
       // Invertimos el estado
       actualizarVisibilidadHabitacion(idNum, !estadoActual);
-      
+
       // Refrescamos todo
       pintarListaAdmin();
       ajustarCatalogo();
@@ -469,11 +468,28 @@ document.addEventListener("DOMContentLoaded", function () {
         const file = e.target.files[0];
         if (!file) return;
         const reader = new FileReader();
-        reader.onload = function(ev) {
+        reader.onload = function (ev) {
           imagenBase64 = ev.target.result;
         };
         reader.readAsDataURL(file);
       });
     }
   }
+  const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+  console.log("¿Botón encontrado?", btnCerrarSesion);
+
+  if (btnCerrarSesion) {
+    btnCerrarSesion.addEventListener("click", function () {
+      console.log("Intentando cerrar sesión..."); // Para depuración
+      localStorage.removeItem("usuarioLogueado");
+      alert("Has cerrado sesión correctamente.");
+      window.location.href = "../index.html";
+    });
+  }
 });
+
+function cerrarSesionManual() {
+  localStorage.removeItem("usuarioLogueado");
+  alert("Has cerrado sesión correctamente.");
+  window.location.href = "../index.html";
+}
