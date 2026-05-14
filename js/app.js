@@ -3,6 +3,7 @@ const opcionesLista = document.getElementById("opcionesLista");
 const listaContenedor = document.getElementById("lista");
 
 document.addEventListener("DOMContentLoaded", mostrarLista);
+actualizarNavbar();
 
 function agregarALista(nombreHabitacion) {
   const nuevaLista = document.createElement("li");
@@ -76,4 +77,32 @@ function mostrarLista() {
     console.log("Datos cargados del Local Storage al iniciar:");
     console.table(guardadas);
   }
+}
+
+
+// actulizamos segun logeo del usuario
+function actualizarNavbar() {
+  const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
+  
+  const divNoLogueado = document.getElementById("navNoLogueado");
+  const divLogueado = document.getElementById("navLogueado");
+  const navAvatar = document.getElementById("navAvatar");
+
+  if (usuario) {
+    if(divNoLogueado) divNoLogueado.classList.add("d-none"); // Ocultar Registrar/Login
+    if(divLogueado) divLogueado.classList.remove("d-none");  // Mostrar Perfil/Cerrar Sesión
+    
+    if(navAvatar && usuario.nombre) {
+      navAvatar.textContent = usuario.nombre.charAt(0).toUpperCase();
+    }
+  } else {
+    if(divNoLogueado) divNoLogueado.classList.remove("d-none"); // Mostrar Registrar/Login
+    if(divLogueado) divLogueado.classList.add("d-none");        // Ocultar Perfil/Cerrar Sesión
+  }
+}
+
+function cerrarSesionManual() {
+  localStorage.removeItem("usuarioLogueado");
+  alert("Has cerrado sesión correctamente.");
+  window.location.href = "../index.html";
 }

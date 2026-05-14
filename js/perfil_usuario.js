@@ -5,6 +5,7 @@ function cerrarSesionManual() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  actualizarNavbar();
   // aquí traemos los datos del usuario logueado
   const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     usuario.telefono = nuevoTelefono;
 
     localStorage.setItem("usuarioLogueado", JSON.stringify(usuario));
-//aqui remplazamos en el local lo que ya teníamos por si volvemos a iniciar sesión
+    //aqui remplazamos en el local lo que ya teníamos por si volvemos a iniciar sesión
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
     for (let i = 0; i < usuarios.length; i++) {
       if (usuarios[i].email === usuario.email) {
@@ -65,12 +66,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const nuevasIniciales = nuevoNombre.charAt(0).toUpperCase();
     fotoPreview.src = `https://ui-avatars.com/api/?name=${nuevasIniciales}&background=1B4015&color=fff&size=200&font-size=0.4`;
 
-    toastGuardado.classList.add("show"); 
+    toastGuardado.classList.add("show");
     setTimeout(() => {
       toastGuardado.classList.remove("show");
     }, 3000);
   });
 });
+
+// actulizamos segun logeo del usuario
+function actualizarNavbar() {
+  const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
+
+  const divNoLogueado = document.getElementById("navNoLogueado");
+  const divLogueado = document.getElementById("navLogueado");
+  const navAvatar = document.getElementById("navAvatar");
+
+  if (usuario) {
+    if (divNoLogueado) divNoLogueado.classList.add("d-none"); // Ocultar Registrar/Login
+    if (divLogueado) divLogueado.classList.remove("d-none"); // Mostrar Perfil/Cerrar Sesión
+
+    if (navAvatar && usuario.nombre) {
+      navAvatar.textContent = usuario.nombre.charAt(0).toUpperCase();
+    }
+  } else {
+    if (divNoLogueado) divNoLogueado.classList.remove("d-none"); // Mostrar Registrar/Login
+    if (divLogueado) divLogueado.classList.add("d-none"); // Ocultar Perfil/Cerrar Sesión
+  }
+}
+
+function cerrarSesionManual() {
+  localStorage.removeItem("usuarioLogueado");
+  alert("Has cerrado sesión correctamente.");
+  window.location.href = "../index.html";
+}
 
 // Esto va cuando ya se tenga la base de datos (LLENAR LOS NUMEROS)
 // fetch("/api/usuario/estadisticas")
