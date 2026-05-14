@@ -23,7 +23,6 @@ body {
 h1, h2, h3 { font-family: var(--font-title); }
 p, a, li   { font-family: var(--font-body); }
 
-
 /* ══════════════════════════════
    NAVBAR
 ══════════════════════════════ */
@@ -141,150 +140,124 @@ p, a, li   { font-family: var(--font-body); }
   }
 }
 
+
 /* ══════════════════════════════
-   BANNER INICIO
+   DETALLE HABITACIÓN
 ══════════════════════════════ */
-.banner-wrapper {
-  position: relative;
-  width: 100%;
+body {
+  background-color: #f9f8f5;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.img-banner-inicio {
-  height: 500px;
-  object-fit: cover;
-  object-position: center;
+.seccion-detalle {
+  padding: 3rem 0;
+  padding-top: 6rem; 
+}
+
+/* ── Fotos ── */
+.foto-principal {
   width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
   display: block;
 }
 
-.banner-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+.foto-miniatura {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+  display: block;
 }
 
-.texto-banner-contacto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-  white-space: nowrap;
+
+/* ── Texto ── */
+.detalle-nombre {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-size: 2.4rem;
+  color: var(--color-opcional);
+  margin-bottom: 0.5rem;
 }
 
-.texto-banner-contacto h1 {
-  font-size: 80px;
+.precio {
+  font-size: 1.8rem;
   font-weight: 700;
+  color: var(--color-button);
 }
 
-.frase-banner-inicio {
-  font-size: 20px;
+.precio-noche {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6c757d;
 }
 
-.carousel-item {
-  position: relative;
+.detalle-descripcion {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1rem;
 }
 
-.carousel-item .banner-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.carousel-item .texto-banner-contacto {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  z-index: 2;
-  white-space: nowrap;
-  width: max-content;
-}
-
-.carousel-indicators [data-bs-target] {
-  background-color: #ffffff;
-  opacity: 0.5;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-}
-
-.carousel-indicators .active {
-  opacity: 1;
-  background-color: #ffffff;
+/* ── Amenidades ── */
+.badge-amenidad {
+  background-color: #e9f5ee;
+  color: #2d6a4f;
+  border: 1px solid #b7dfc9;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 /* ══════════════════════════════
-   VERSIÓN MÓVIL — BANNER
+   MÓVIL
 ══════════════════════════════ */
 @media (max-width: 768px) {
-  .img-banner-inicio {
-    height: 320px;
-    object-fit: cover;
-    width: 100%;
+  .foto-principal {
+    height: 220px;
   }
 
-  .texto-banner-contacto {
-    width: 90%;
-    white-space: normal;
-    text-align: center;
+  .foto-miniatura {
+    height: 90px;
   }
 
-  .texto-banner-contacto h1 {
-    font-size: 2rem;
-    line-height: 1.2;
+  .detalle-nombre {
+    font-size: 1.5rem;
   }
 
-  .frase-banner-inicio {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  /*Carrusel paa movil */
-  .carousel-item .texto-banner-contacto {
-    width: 90%;
-    white-space: normal;
+  .precio {
+    font-size: 1.4rem;
   }
 }
-
 
 /* ══════════════════════════════
-   BUSCADOR DE FECHAS
+   BUSCADOR DETALLE HABITACIÓN
 ══════════════════════════════ */
-.buscador-section {
-  margin-top: -80px;
+.detalle-buscador-section {
+  margin-top: 16px;
   position: relative;
   z-index: 3;
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
-  background: transparent;
 }
 
-.buscador-card {
+.detalle-buscador-card {
   display: flex;
   align-items: center;
   gap: 16px;
   background: #ffffff;
   border: 1px solid #e0ddd6;
   border-radius: 16px;
-  padding: 20px 24px;
+  padding: 10px 24px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
   flex-wrap: wrap;
-  max-width: 900px;
   width: 100%;
 }
 
-.buscador-campo {
+.detalle-buscador-campo {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -292,7 +265,7 @@ p, a, li   { font-family: var(--font-body); }
   min-width: 150px;
 }
 
-.buscador-label {
+.detalle-buscador-label {
   font-size: .8rem;
   font-weight: 600;
   color: #555;
@@ -300,7 +273,7 @@ p, a, li   { font-family: var(--font-body); }
   text-transform: uppercase;
 }
 
-.buscador-input {
+.detalle-buscador-input {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 10px 14px;
@@ -310,15 +283,14 @@ p, a, li   { font-family: var(--font-body); }
   outline: none;
   width: 100%;
   cursor: pointer;
-  font-family: var(--font-body);
 }
 
-.buscador-input:focus {
+.detalle-buscador-input:focus {
   border-color: #5FA62D;
   box-shadow: 0 0 0 3px rgba(95, 166, 45, 0.15);
 }
 
-.buscador-divider {
+.detalle-buscador-divider {
   width: 1px;
   height: 50px;
   background: #e0ddd6;
@@ -326,48 +298,41 @@ p, a, li   { font-family: var(--font-body); }
   margin-bottom: 4px;
 }
 
-.buscador-btn {
+.detalle-buscador-btn {
   background: #5FA62D;
   color: #fff;
   border: none;
   border-radius: 12px;
-  padding: 14px 24px;
+  padding: 10px 14px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  font-family: var(--font-body);
   transition: background .2s ease;
 }
 
-.buscador-btn:hover {
-  background: #4a8a22;
+.detalle-buscador-btn:hover {
+  background-color:  var(--color-opcional);
 }
 
-/* VERSIÓN MÓVIL — BUSCADOR */
+/* MÓVIL */
 @media (max-width: 768px) {
-  .buscador-section {
-    margin-top: -40px;
-    padding: 20px 16px;
-  }
-
-  .buscador-card {
+  .detalle-buscador-card {
     flex-direction: column;
   }
 
-  .buscador-divider {
+  .detalle-buscador-divider {
     display: none;
   }
 
-  .buscador-btn {
+  .detalle-buscador-btn {
     width: 100%;
     text-align: center;
   }
 }
 
-
 /* ══════════════════════════════
-   SECCIÓN HABITACIONES DESTACADAS
+   SECCIÓN MAS HABITACIONES
 ══════════════════════════════ */
 #habitaciones {
   background-color: #ffffff;
@@ -512,298 +477,12 @@ p, a, li   { font-family: var(--font-body); }
 
 
 /* ══════════════════════════════
-   SECCIÓN SOBRE NOSOTROS
-══════════════════════════════ */
-.about-subtitulo {
-  font-family: var(--font-body);
-  font-size: .9rem;
-  font-weight: 700;
-  color: var(--color-button);
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  margin-bottom: 8px;
-}
-
-.about-titulo {
-  font-family: var(--font-title);
-  font-size: 2.2rem;
-  color: var(--color-opcional);
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.about-descripcion {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 14px;
-}
-
-.about-imagen {
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
-
-.btn-ver-nosotros {
-  margin: 20px;
-  margin-left: auto;
-  border-radius: 30px;
-  padding: 8px 22px;
-  font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 600;
-  background-color: var(--color-button);
-  color: #fff;
-  border: none;
-  transition: background .2s ease;
-}
-
-.btn-ver-nosotros:hover {
-  background-color: var(--color-opcional);
-  color: #fff;
-}
-
-/* VERSIÓN MÓVIL — NOSOTROS */
-@media (max-width: 768px) {
-  .about-section .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .about-titulo {
-    font-size: 1.6rem;
-  }
-
-  .about-descripcion {
-    font-size: 1rem;
-  }
-}
-
-
-/* ══════════════════════════════
-   BANNER BENEFICIOS
-══════════════════════════════ */
-.beneficios-section {
-  position: relative;
-  padding: 80px 20px;
-  overflow: hidden;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.beneficios-bg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
-.beneficios-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.55);
-  z-index: 1;
-}
-
-.beneficios-content {
-  position: relative;
-  z-index: 2;
-}
-
-.beneficio-card {
-  text-align: center;
-  padding: 30px 20px;
-  color: #fff;
-}
-
-.beneficio-icono {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 2rem;
-  color: var(--color-accent);
-  
-}
-
-.beneficio-titulo {
-  font-family: var(--font-title);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.beneficio-texto {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.6;
-  margin-bottom: 0;
-}
-
-/* VERSIÓN MÓVIL — BENEFICIOS */
-@media (max-width: 768px) {
-  .beneficios-section {
-    padding: 40px 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  .beneficio-icono {
-    width: 60px;
-    height: 60px;
-    font-size: 1.4rem;
-  }
-
-  .beneficio-titulo {
-    font-size: 1.1rem;
-  }
-
-  .beneficio-texto {
-    font-size: .9rem;
-  }
-
-  .beneficio-card {
-    padding: 16px 10px;
-  }
-}
-
-
-/* ══════════════════════════════
-   TESTIMONIOS
-══════════════════════════════ */
-.testimonios-section {
-  background-color: #f9f8f5;
-}
-
-.testimonio-card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.testimonio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-}
-
-.testimonio-estrellas {
-  color: var(--color-accent);
-  font-size: 1rem;
-  margin-bottom: 16px;
-  letter-spacing: 2px;
-}
-
-.testimonio-texto {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.75;
-  flex-grow: 1;
-  margin-bottom: 24px;
-}
-
-.testimonio-autor {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.testimonio-avatar {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background-color: var(--color-opcional);
-  color: #ffffff;
-  font-family: var(--font-title);
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.testimonio-nombre {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: .95rem;
-  color: var(--color-opcional);
-  margin-bottom: 2px;
-}
-
-.testimonio-ciudad {
-  font-family: var(--font-body);
-  font-size: .8rem;
-  color: #999;
-  margin-bottom: 0;
-}
-
-/*VERSIÓN MÓVIL — TESTIMONIOS */
-@media (max-width: 768px) {
-  .testimonios-section .container {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .testimonio-card {
-    padding: 20px 16px;
-  }
-}
-
-
-/* ══════════════════════════════
-   GALERÍA — 10 FOTOS (5 + 5)
-══════════════════════════════ */
-.galeria-section {
-  background-color: #f9f8f5;
-}
-
-.galeria-item {
-  border-radius: 16px;
-  overflow: hidden;
-  height: 260px;
-}
-
-.galeria-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform .4s ease;
-}
-
-/* VERSIÓN MÓVIL — GALERÍA */
-@media (max-width: 768px) {
-  .galeria-item {
-    height: 160px;
-  }
-}
-
-
-/* ══════════════════════════════
    FOOTER
 ══════════════════════════════ */
 .footer {
   background-color: var(--color-opcional);
   color: var(--color-secondary);
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .logo-footer {
