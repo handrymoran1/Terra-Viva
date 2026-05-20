@@ -24,7 +24,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/contactanos.css" />
+    <link rel="stylesheet" href="../css/detalleReserva.css" />
   </head>
   <body>
     <!-- ================= NAVBAR ================= -->
@@ -87,14 +87,14 @@
             <!--si no  está logueado es visible por defecto-->
             <div id="navNoLogueado">
               <a
-                href="registrar.html"
+                href="./html/registrar.html"
                 class="btn custom-btn-primary btn-sm"
                 style="border-radius: 32px; width: 100px"
               >
                 Registrarse
               </a>
               <a
-                href="niciarSesion.html"
+                href="./html/iniciarSesion.html"
                 class="btn custom-btn-secondary btn-sm"
                 style="border-radius: 32px; width: 100px"
               >
@@ -121,140 +121,68 @@
       </div>
     </nav>
 
-    <!--BANNER CONTACTANOS-->
-    <div class="banner-wrapper">
-      <img
-        src="../assets/banner-contacto/bannerContacto.webp"
-        alt="Banner"
-        class="img-banner-contacto"
-      />
-      <div class="banner-overlay"></div>
-      <div class="texto-banner-contacto">
-        <h1>Contacto</h1>
-      </div>
-    </div>
-
-    <!-- FORMULARIO -->
     <section class="container my-5">
-      <div class="row align-items-center g-5">
-        <!-- COLUMNA IZQUIERDA — formulario -->
-        <div class="col-12 col-md-6">
-          <h2 class="mb-2">Contáctanos</h2>
-          <p class="mb-4">
-            ¿Tienes alguna pregunta o quieres hacer una reserva? Escríbenos y te
-            responderemos lo antes posible.
-          </p>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <!-- card contenedora -->
+          <div class="card shadow-lg border-0" id="tarjetaDetalleReserva">
+            <div class="row g-0">
+              <div class="col-md-5">
+                <img
+                  id="detalleImagen"
+                  src="..."
+                  alt="..."
+                  class="img-fluid rounded-start h-100"
+                  style="object-fit: cover"
+                />
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <h3 class="card-title" id="detalleNombre">Cargando...</h3>
+                  <p class="card-text text-muted" id="detalleDescripcion"></p>
 
-          <form action="https://formspree.io/f/xjgjwolj" method="POST">
-            <div class="mb-3">
-              <label for="full-name" class="form-label">Nombre completo</label>
-              <input
-                type="text"
-                class="form-control"
-                id="full-name"
-                name="full-name"
-                required
-              />
+                  <hr />
+
+                  <div class="mb-3">
+                    <strong
+                      ><i class="bi bi-calendar-check me-2"></i>Fechas:</strong
+                    >
+                    <span id="detalleFechas">No seleccionadas</span>
+                  </div>
+
+                  <div class="mb-3">
+                    <strong
+                      ><i class="bi bi-people-fill me-2"></i>Huéspedes:</strong
+                    >
+                    <span id="detalleHuespedes">-</span>
+                  </div>
+
+                  <!-- ACÁ AGREGAMOS EL PRECIO UNITARIO QUE FALTABA -->
+                  <div class="mb-3">
+                    <strong>Precio por noche:</strong>
+                    $<span id="detallePrecio">0</span>
+                  </div>
+
+                  <hr />
+
+                  <p class="fw-bold">
+                    Total a pagar (<span id="detalleCantidadNoches">0</span>
+                    noches): $<span id="detalleTotalPagar">0</span>
+                  </p>
+
+                  <button
+                    id="btnConfirmarReserva"
+                    class="btn btn-success btn-lg w-100"
+                  >
+                    Confirmar Reserva
+                  </button>
+                </div>
+              </div>
             </div>
-
-            <div class="mb-3">
-              <label for="email-address" class="form-label">Correo</label>
-              <input
-                type="email"
-                class="form-control"
-                id="email-address"
-                name="email"
-                required
-              />
-            </div>
-
-            <div class="mb-3">
-              <label for="support-type" class="form-label"
-                >Tipo de soporte</label
-              >
-              <select
-                class="form-select"
-                id="support-type"
-                name="support-type"
-                required
-              >
-                <option value="" disabled selected hidden>
-                  Selecciona una opción
-                </option>
-                <option value="technical-issue">Problema técnico</option>
-                <option value="billing-inquiry">Atención al cliente</option>
-                <option value="account-help">Ayuda con la cuenta</option>
-                <option value="general-question">Pregunta general</option>
-              </select>
-            </div>
-
-            <div class="mb-3">
-              <label for="subject-of-request" class="form-label">Asunto</label>
-              <input
-                type="text"
-                class="form-control"
-                id="subject-of-request"
-                name="subject-of-request"
-                required
-              />
-            </div>
-
-            <div class="mb-3">
-              <label for="detailed-description" class="form-label"
-                >Descripción</label
-              >
-              <textarea
-                class="form-control"
-                id="detailed-description"
-                name="detailed-description"
-                rows="4"
-                required
-              ></textarea>
-            </div>
-
-            <button
-              type="submit"
-              class="btn btn-enviar w-100"
-              style="border-radius: 32px"
-            >
-              Enviar
-            </button>
-          </form>
-        </div>
-
-        <!-- COLUMNA DERECHA — 4 fotos 2x2 -->
-        <div class="col-12 col-md-6">
-          <div class="contacto-grid-fotos">
-            <img
-              src="../assets/fotos_index/foto1.png"
-              alt="Foto 1"
-              class="contacto-foto"
-              loading="lazy"
-            />
-            <img
-              src="../assets/fotos_index/foto2.png"
-              alt="Foto 2"
-              class="contacto-foto"
-              loading="lazy"
-            />
-            <img
-              src="../assets/fotos_index/foto3.png"
-              alt="Foto 3"
-              class="contacto-foto"
-              loading="lazy"
-            />
-            <img
-              src="../assets/fotos_index/foto4.png"
-              alt="Foto 4"
-              class="contacto-foto"
-              loading="lazy"
-            />
           </div>
         </div>
       </div>
     </section>
-    <!-- FIN FORMULARIO -->
-
     <!-- FOOTER -->
     <footer class="footer py-5">
       <div class="container">
@@ -315,21 +243,6 @@
       </div>
     </footer>
     <!-- FIN FOOTER -->
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-    <script>
-      new Choices("#support-type", {
-        searchEnabled: false,
-        itemSelectText: "",
-      });
-    </script>
-
-    <script src="../js/script.js"></script>
+    <script src="../js/detalleReserva.js"></script>
   </body>
 </html>

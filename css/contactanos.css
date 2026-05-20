@@ -1,6 +1,3 @@
-/* ══════════════════════════════
-   VARIABLES CORPORATIVAS
-══════════════════════════════ */
 :root {
   --color-primary: #ccc5b7;
   --color-secondary: #ffffff;
@@ -12,9 +9,6 @@
   --font-body: "Yrsa", serif;
 }
 
-/* ══════════════════════════════
-   FUENTE GLOBAL DEL BODY
-══════════════════════════════ */
 body {
   font-family: var(--font-body);
 }
@@ -22,9 +16,6 @@ body {
 h1, h2, h3 { font-family: var(--font-title); }
 p, a, li   { font-family: var(--font-body); }
 
-/* ══════════════════════════════
-   NAVBAR
-══════════════════════════════ */
 .custom-navbar {
   background-color: var(--color-opcional);
 }
@@ -342,4 +333,3 @@ textarea.form-control {
 .texto-derechos {
   color: #e5bb89 !important;
 }
-

@@ -3,8 +3,8 @@
   --color-secondary: #ffffff;
   --color-accent: #e5bb89;
   --color-dark: #6f5d44;
-  --color-button: #5fa62d;
-  --color-opcional: #1b4015;
+  --color-button: #5FA62D;
+  --color-opcional: #1B4015;
   --font-title: "Berkshire Swash", cursive;
   --font-body: "Yrsa", serif;
 }
@@ -13,16 +13,8 @@ body {
   font-family: var(--font-body);
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-title);
-}
-p,
-a,
-li {
-  font-family: var(--font-body);
-}
+h1, h2, h3 { font-family: var(--font-title); }
+p, a, li   { font-family: var(--font-body); }
 
 .custom-navbar {
   background-color: var(--color-opcional);
@@ -38,14 +30,30 @@ li {
   font-family: var(--font-body);
   font-size: 18px;
   color: var(--color-secondary) !important;
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
   color: var(--color-accent) !important;
   transform: translateY(-2px);
+}
+
+.custom-btn-primary {
+  font-family: var(--font-body);
+  font-size: 17px;
+  background-color: var(--color-button);
+  border: none;
+  color: #ffffff;
+  width: 150px !important;
+  display: inline-flex;        
+  align-items: center;         
+  justify-content: center;     
+  text-align: center;          
+}
+
+.custom-btn-primary:hover {
+  background-color: var(--color-secondary) !important;
+  color: var(--color-dark);
 }
 
 .custom-btn-secondary {
@@ -82,7 +90,7 @@ li {
 }
 
 .nav-link.active::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -95,14 +103,8 @@ li {
 
 /* VERSIÓN MÓVIL — NAVBAR */
 @media (max-width: 768px) {
-  .navbar-brand {
-    font-size: 22px;
-  }
-  .logo-nav {
-    height: 40px;
-    width: 40px;
-    margin-right: 8px;
-  }
+  .navbar-brand { font-size: 22px; }
+  .logo-nav { height: 40px; width: 40px; margin-right: 8px; }
 
   .nav-link.active::after {
     left: 0;
@@ -110,73 +112,3 @@ li {
     width: 30%;
   }
 }
-
-/* banner mobile */
-@media (max-width: 768px) {
-  .img-banner-contacto {
-    height: 200px;
-    object-fit: cover;
-    width: 100%;
-  }
-
-  .texto-banner-contacto h1 {
-    font-size: 2rem;
-  }
-}
-
-.footer {
-  background-color: var(--color-opcional);
-  color: var(--color-secondary);
-  margin-top: 100px;
-}
-
-.logo-footer {
-  width: 75px;
-  height: 75px;
-}
-
-.footer p {
-  color: var(--color-primary);
-  font-family: var(--font-body);
-}
-
-.footer hr {
-  border-color: var(--color-accent);
-  opacity: 0.5;
-}
-
-.footer-link {
-  display: inline-block;
-  color: var(--color-primary);
-  font-family: var(--font-body);
-  text-decoration: none;
-  font-size: 18px;
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.footer-link:hover {
-  color: var(--color-accent);
-  transform: translateY(-2px);
-}
-
-.footer ul li {
-  margin-bottom: 8px;
-}
-
-.texto-derechos {
-  color: #e5bb89 !important;
-}
-
-/* 📱 VERSIÓN MÓVIL — FOOTER */
-@media (max-width: 768px) {
-  .logo-footer {
-    width: 100px;
-    height: 100px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-  }
-}
-
-/* *********************************************************** */

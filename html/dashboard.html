@@ -12,7 +12,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
   </head>
   <body>
     <!-- NAVBAR-->
@@ -64,18 +64,12 @@
           </ul>
           <div class="d-flex gap-2">
             <button
-              class="btn custom-btn-primary btn-sm"
-              style="border-radius: 32px; width: 100px"
-            >
-              <a href="/html/" target="_blank" rel="noopener noreferrer"></a>
-              Registrarse
-            </button>
-            <a
-              href="/html/iniciarSesion.html"
+              onclick="cerrarSesionManual()"
               class="btn custom-btn-secondary btn-sm"
               style="border-radius: 32px; width: 100px"
-              >Iniciar sesión</a
             >
+              Cerrar sesión
+            </button>
           </div>
         </div>
       </div>
@@ -187,9 +181,19 @@
           >
             <ul class="list-unstyled mb-0 d-flex gap-4 flex-wrap">
               <li><a href="../index.html" class="footer-link">Inicio</a></li>
-              <li><a href="../html/nosotros.html" class="footer-link">Nosotros</a></li>
-              <li><a href="../html/habitaciones.html" class="footer-link">Habitaciones</a></li>
-              <li><a href="../html/contactanos.html" class="footer-link">Contactonos</a></li>
+              <li>
+                <a href="../html/nosotros.html" class="footer-link">Nosotros</a>
+              </li>
+              <li>
+                <a href="../html/habitaciones.html" class="footer-link"
+                  >Habitaciones</a
+                >
+              </li>
+              <li>
+                <a href="../html/contactanos.html" class="footer-link"
+                  >Contactonos</a
+                >
+              </li>
             </ul>
 
             <div class="d-flex gap-3 justify-content-center ms-md-auto">
