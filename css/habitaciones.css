@@ -111,6 +111,58 @@ p, a, li   { font-family: var(--font-body); }
   }
 }
 
+/* ══════════════════════════════
+   BANNER 
+══════════════════════════════ */
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.img-banner-contacto {
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  display: block;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* El texto encima del banner */
+.texto-banner-contacto {
+  position: absolute;   
+  top: 50%;             
+  left: 50%;            
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: white;         
+}
+
+.texto-banner-contacto h1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+/* banner mobile */
+@media (max-width: 768px) {
+  .img-banner-contacto {
+    height: 200px;      
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .texto-banner-contacto h1 {
+    font-size: 2rem;    
+  }
+}
+
+
 /*Habitaciones*/
 
 .habitaciones-section {
@@ -182,3 +234,61 @@ p, a, li   { font-family: var(--font-body); }
     margin: 10px auto 0;
     border-radius: 2px;
   }
+
+  /* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+.footer {
+  background-color: var(--color-opcional);
+  color: var(--color-secondary);
+  margin-top: 100px;
+}
+
+.logo-footer {
+  width: 75px;
+  height: 75px;
+}
+
+.footer p {
+  color: var(--color-primary);
+  font-family: var(--font-body);
+}
+
+.footer hr {
+  border-color: var(--color-accent);
+  opacity: 0.5;
+}
+
+.footer-link {
+  display: inline-block;
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.texto-derechos {
+  color: #e5bb89 !important;
+}
+
+/* 📱 VERSIÓN MÓVIL — FOOTER */
+@media (max-width: 768px) {
+  .logo-footer {
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+}
+
+/* *********************************************************** */
