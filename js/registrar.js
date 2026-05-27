@@ -5,6 +5,52 @@ const inputEmail = document.getElementById("inputCorreo");
 const textoTelefono = document.getElementById("textoTelefono");
 const textoPassword = document.getElementById("textoPassword");
 const confirmarPassword = document.getElementById("textoConfirmarPassword");
+// alerta visual y toggles de contraseña
+const alertaRegistro = document.getElementById("alerta-registro");
+const iconoAlertaReg = document.getElementById("icono-alerta-reg");
+const mensajeAlertaReg = document.getElementById("mensaje-alerta-reg");
+
+function mostrarAlertaRegistro(exito, mensaje) {
+  alertaRegistro.classList.remove("d-none");
+  mensajeAlertaReg.textContent = mensaje;
+  if (exito) {
+    iconoAlertaReg.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
+  } else {
+    iconoAlertaReg.innerHTML =
+      '<i class="bi bi-exclamation-triangle-fill"></i>';
+  }
+}
+
+// configurar el toggle de cualquier campo de contraseña
+function configurarToggleContrasena(idToggle, idInput, idIcono) {
+  const toggle = document.getElementById(idToggle);
+  const input = document.getElementById(idInput);
+  const icono = document.getElementById(idIcono);
+  toggle.addEventListener("click", function () {
+    const tipo =
+      input.getAttribute("type") === "password" ? "text" : "password";
+    input.setAttribute("type", tipo);
+    if (tipo === "password") {
+      icono.className = "bi bi-eye-fill";
+    } else {
+      icono.className = "bi bi-eye-slash-fill";
+    }
+  });
+}
+
+// toggles al cargar la página
+document.addEventListener("DOMContentLoaded", function () {
+  configurarToggleContrasena(
+    "toggle-contrasena-reg",
+    "inputPassword",
+    "icono-ojo-reg",
+  );
+  configurarToggleContrasena(
+    "toggle-confirmar-reg",
+    "inputPasswordDos",
+    "icono-ojo-confirmar",
+  );
+});
 
 btnRegistrar.addEventListener("click", function (e) {
   e.preventDefault();
@@ -24,8 +70,10 @@ function registrarUsuario() {
   let existeEmail = false;
   let existeTelefono = false;
 
+  
   //verificar el nombre primero que no exista
   for (let i = 0; i < usuarios.length; i++) {
+
     if (usuarios[i].nombre === nombre) {
       existeNombre = true;
       textoAlerta.innerHTML = `<h5>Este nombre ya está registrado.</h5>`;
