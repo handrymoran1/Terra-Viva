@@ -6,14 +6,22 @@ function actualizarNavbar() {
   const navAvatar = document.getElementById("navAvatar");
 
   if (usuario) {
-    if (divNoLogueado) divNoLogueado.classList.add("d-none");
-    if (divLogueado) divLogueado.classList.remove("d-none");
+    if (divNoLogueado) divNoLogueado.style.display = "none";
+    if (divLogueado) {
+      divLogueado.classList.remove("d-none");
+      divLogueado.style.display = "flex";
+      divLogueado.style.gap = "8px";
+      divLogueado.style.alignItems = "center";
+    }
     if (navAvatar && usuario.nombre) {
       navAvatar.textContent = usuario.nombre.charAt(0).toUpperCase();
     }
   } else {
-    if (divNoLogueado) divNoLogueado.classList.remove("d-none");
-    if (divLogueado) divLogueado.classList.add("d-none");
+    if (divNoLogueado) divNoLogueado.style.display = "flex";
+    if (divLogueado) {
+      divLogueado.classList.add("d-none");
+      divLogueado.style.display = "none";
+    }
   }
 }
 
