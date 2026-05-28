@@ -111,14 +111,21 @@
             </li>
           </ul>
 
-          <div class="d-flex gap-2 ms-lg-4 mt-3 mt-lg-0">
-            <a
-              href="../html/iniciarSesion.html"
-              class="btn custom-btn-secondary btn-sm"
-              style="border-radius: 32px; width: 100px"
-            >
-              Iniciar sesión
-            </a>
+          <div class="d-flex gap-2 align-items-center ms-lg-4 mt-3 mt-lg-0">
+            <div id="navNoLogueado">
+              <a href="iniciarSesion.html" class="btn custom-btn-secondary btn-sm" style="border-radius: 32px; width: 100px">
+                Iniciar sesión
+              </a>
+            </div>
+            <div id="navLogueado" class="d-none">
+              <a href="./perfil_usuario.html" class="nav-perfil-btn">
+                <span class="nav-avatar-icon" id="navAvatar">U</span>
+                <span>Mi perfil</span>
+              </a>
+              <button onclick="cerrarSesionManual()" class="btn custom-btn-secondary btn-sm" style="border-radius: 32px; width: 100px">
+                Cerrar sesión
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -420,6 +427,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/navbar.js"></script>
     <script src="../js/registrar.js"></script>
   </body>
 </html>

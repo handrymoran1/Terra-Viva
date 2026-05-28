@@ -54,5 +54,7 @@ function actualizarNavbar() {
 function cerrarSesionManual() {
   localStorage.removeItem("usuarioLogueado");
   alert("Has cerrado sesión correctamente.");
-  window.location.href = "../index.html";
+  window.location.href = "./index.html";
 }
+
+document.addEventListener("DOMContentLoaded", actualizarNavbar);
