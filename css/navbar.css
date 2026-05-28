@@ -3,6 +3,34 @@
   display: none;
 }
 
+.custom-btn-primary {
+  font-family: var(--font-body);
+  font-size: 17px;
+  background-color: var(--color-button);
+  border: none;
+  color: #ffffff;
+  text-align: center;
+}
+
+.custom-btn-primary:hover {
+  background-color: var(--color-secondary) !important;
+  color: var(--color-dark);
+}
+
+.custom-btn-secondary {
+  font-family: var(--font-body);
+  font-size: 17px;
+  background-color: transparent;
+  border: 2px solid var(--color-secondary);
+  color: #ffffff;
+  width: 150px !important;
+}
+
+.custom-btn-secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-opcional);
+}
+
 .nav-perfil-btn {
   display: flex;
   align-items: center;
