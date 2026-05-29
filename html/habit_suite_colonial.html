@@ -113,7 +113,7 @@
       <div class="col-12 col-lg-6">
         <img
           id="fotoPrincipal"
-          src="../assets/habitacion1/01.png"
+          src="../assets/habitacion_suite_colonial/02.png"
           alt="Foto principal de la Suite Colonial"
           class="foto-principal mb-3"
         >
@@ -121,7 +121,7 @@
         <div class="row g-3">
           <div class="col-4">
             <img
-              src="../assets/habitacion1/02.png"
+              src="../assets/habitacion_suite_colonial/01.png"
               alt="Vista 1 de la Suite Colonial"
               class="foto-miniatura activa"
               onclick="cambiarFoto(this)"
@@ -129,7 +129,7 @@
           </div>
           <div class="col-4">
             <img
-              src="../assets/habitacion1/03.png"
+              src="../assets/habitacion_suite_colonial/03.png"
               alt="Vista 2 de la Suite Colonial"
               class="foto-miniatura"
               onclick="cambiarFoto(this)"
@@ -137,7 +137,7 @@
           </div>
           <div class="col-4">
             <img
-              src="../assets/habitacion1/04.jpg"
+              src="../assets/habitacion_suite_colonial/04.jpg"
               alt="Vista 3 de la Suite Colonial"
               class="foto-miniatura"
               onclick="cambiarFoto(this)"
@@ -151,7 +151,7 @@
         <h1 class="detalle-nombre">Suite Colonial</h1>
 
         <div class="precio-detalle">
-          $340.000 <span class="precio-noche">/ noche</span>
+          $180.000 <span class="precio-noche">/ noche</span>
         </div>
 
         <p class="detalle-descripcion">
@@ -165,107 +165,75 @@
           <span class="badge-amenidad"><i class="bi bi-droplet"></i> Baño privado</span>
         </div>
 
-        <section class="detalle-buscador-section">
-          <div class="detalle-buscador-card">
-
-            <div class="detalle-buscador-campo">
-              <label for="fechaLlegada" class="detalle-buscador-label">Llegada</label>
-              <input type="date" id="fechaLlegada" class="detalle-buscador-input">
-            </div>
-
-            <div class="detalle-buscador-divider"></div>
-
-            <div class="detalle-buscador-campo">
-              <label for="fechaSalida" class="detalle-buscador-label">Salida</label>
-              <input type="date" id="fechaSalida" class="detalle-buscador-input">
-            </div>
-
-            <div class="detalle-buscador-divider"></div>
-
-            <div class="detalle-buscador-campo">
-              <label for="huespedes" class="detalle-buscador-label">Huéspedes</label>
-              <select id="huespedes" class="detalle-buscador-input">
-                <option>1 adulto</option>
-                <option selected>2 adultos</option>
-                <option>3 adultos</option>
-                <option>4 adultos</option>
-                <option>2 adultos + 1 niño</option>
-                <option>2 adultos + 2 niños</option>
-              </select>
-            </div>
-
-            <button class="detalle-buscador-btn" id="btnBuscar">
-              Buscar disponibilidad
-            </button>
-          </div>
-        </section>
+         <a href="./reservar.html" class="btn-reservar-detalle">
+        Reservar ahora
+        </a>
+        
       </div>
     </div>
   </main>
 
   <!-- MÁS OPCIONES -->
-  <section id="habitaciones" class="container featured-section">
-    <div class="text-center mb-5">
-      <p class="section-subtitle">Más opciones</p>
-      <h2 class="section-title">Explora más habitaciones</h2>
-    </div>
+<section id="habitaciones" class="container featured-section">
+  <div class="text-center mb-5">
+    <p class="section-subtitle">Más opciones</p>
+    <h2 class="section-title">Explora más habitaciones</h2>
+  </div>
 
-    <div class="row g-4">
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card room-card h-100">
-          <img src="../assets/habitaciones/habitacion10.png" class="card-img-top" alt="Habitación Doble Jardín" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Habitación Doble Jardín</h5>
-            <p class="card-text">Espacio acogedor con vista a zonas verdes y excelente iluminación natural. Perfecta para relajarse.</p>
-            <p class="precio-hab">$200.000 / noche</p>
-            <a href="./contactanos.html" class="btn btn-reserva-card">Más detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card room-card h-100">
-          <img src="../assets/habitaciones/habitacion2.png" class="card-img-top" alt="Habitación Doble Natural" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Habitación Doble Natural</h5>
-            <p class="card-text">Decoración cálida con elementos en madera y tonos suaves. Ambiente relajante y armonioso.</p>
-            <p class="precio-hab">$210.000 / noche</p>
-            <a href="./contactanos.html" class="btn btn-reserva-card">Más detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card room-card h-100">
-          <img src="../assets/habitaciones/habitacion5.png" class="card-img-top" alt="Habitación Suite Premium" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Habitación Suite Premium</h5>
-            <p class="card-text">La más exclusiva, con cama doble amplia, diseño moderno y detalles elegantes para una experiencia superior.</p>
-            <p class="precio-hab">$330.000 / noche</p>
-            <a href="./contactanos.html" class="btn btn-reserva-card">Más detalles</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card room-card h-100">
-          <img src="../assets/habitaciones/habitacion3.png" class="card-img-top" alt="Habitación Colonial" loading="lazy">
-          <div class="card-body">
-            <h5 class="card-title">Habitación Doble con Balcón</h5>
-            <p class="card-text">Cuenta con cama doble y balcón privado, ideal para disfrutar del aire libre y la vista. Ambiente cómodo y acogedor.</p>
-            <p class="precio-hab">$230.000 / noche</p>
-            <a href="./contactanos.html" class="btn btn-reserva-card">Más detalles</a>
-          </div>
+  <div class="row g-4">
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card room-card h-100">
+        <img src="../assets/habitaciones/habitacion2.png" class="card-img-top" alt="Habitación Doble Jardín" loading="lazy">
+        <div class="card-body">
+          <h5 class="card-title">Habitación Doble Jardín</h5>
+          <p class="card-text">Espacio acogedor con vista a zonas verdes y excelente iluminación natural. Perfecta para relajarse.</p>
+          <p class="precio-hab">$200.000 / noche</p>
+          <a href="./contactanos.html" class="btn btn-reserva-card">Más detalles</a>
         </div>
       </div>
     </div>
 
-    <div class="text-center mt-4">
-        <a href="../html/habitaciones.html" class="btn btn-pill"
-          >Ver más habitaciones</a
-        >
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card room-card h-100">
+        <img src="../assets/habitaciones/habitacion5.png" class="card-img-top" alt="Habitación Natural" loading="lazy">
+        <div class="card-body">
+          <h5 class="card-title">Habitación Natural</h5>
+          <p class="card-text">Decoración cálida con elementos en madera y tonos suaves. Un ambiente relajante y armonioso. Ideal para descansar plenamente.</p>
+          <p class="precio-hab">$200.000 / noche</p>
+          <a href="./contactanos.html" class="btn btn-reserva-card">Más detalles</a>
+        </div>
       </div>
-  </section>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card room-card h-100">
+        <img src="../assets/habitaciones/habitacion10.png" class="card-img-top" alt="Suite Premium" loading="lazy">
+        <div class="card-body">
+          <h5 class="card-title">Suite Premium</h5>
+          <p class="card-text">La opción más exclusiva, con diseño moderno, cama amplia y detalles elegantes. Ambiente sofisticado y confortable.</p>
+          <p class="precio-hab">$450.000 / noche</p>
+          <a href="./contactanos.html" class="btn btn-reserva-card">Más detalles</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card room-card h-100">
+        <img src="../assets/habitaciones/habitacion3.png" class="card-img-top" alt="Habitación con Balcón" loading="lazy">
+        <div class="card-body">
+          <h5 class="card-title">Habitación con Balcón</h5>
+          <p class="card-text">Habitación con cama doble y balcón privado, perfecta para disfrutar del aire libre y una vista agradable. Ambiente fresco y tranquilo.</p>
+          <p class="precio-hab">$330.000 / noche</p>
+          <a href="./contactanos.html" class="btn btn-reserva-card">Más detalles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="../html/habitaciones.html" class="btn btn-pill">Ver más habitaciones</a>
+  </div>
+</section>
 
   <!-- ================= FOOTER ================= -->
     <!-- FOOTER -->

@@ -204,95 +204,27 @@ p, a, li, button, input, select, label {
   font-size: 1.1rem;
 }
 
-/* BUSCADOR DETALLE */
-.detalle-buscador-section {
-  margin-top: 1rem;
-}
-
-.detalle-buscador-card {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: 18px;
-  padding: 22px 24px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
-  flex-wrap: wrap;
-}
-
-.detalle-buscador-campo {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex: 1;
-  min-width: 150px;
-}
-
-.detalle-buscador-label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #5d5d5d;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.detalle-buscador-input {
-  border: 1px solid #d9d9d9;
-  border-radius: 10px;
-  padding: 12px 14px;
-  font-size: 0.95rem;
-  color: #333;
-  background: #fff;
-  outline: none;
-  width: 100%;
-}
-
-.detalle-buscador-input:focus {
-  border-color: var(--color-button);
-  box-shadow: 0 0 0 3px rgba(95, 166, 45, 0.15);
-}
-
-.detalle-buscador-divider {
-  width: 1px;
-  height: 50px;
-  background: var(--color-border);
-  align-self: flex-end;
-  margin-bottom: 4px;
-}
-
-.detalle-buscador-btn {
-  background: var(--color-button);
+.btn-reservar-detalle {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 14px 40px;
+  background-color: #2d5a27;
   color: #fff;
-  border: none;
-  border-radius: 12px;
-  padding: 14px 24px;
-  font-size: 15PX;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s ease;
+  font-family: 'Yrsa', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 32px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.15s ease;
 }
 
-.detalle-buscador-btn:hover {
-  background: #4c8c24;
+.btn-reservar-detalle:hover {
+  background-color: #1e3d1a;
+  color: #fff;
 }
 
-/* MÁS OPCIONES */
-.featured-section {
-  padding-top: 1rem;
-  padding-bottom: 4rem;
-}
-
-.section-subtitle {
-  color: var(--color-button);
-  font-size: 1.25rem;
-  margin-bottom: 0.25rem;
-}
-
-.section-title {
-  color: var(--color-opcional);
-  font-size: 2.4rem;
+.btn-reservar-detalle:active {
+  transform: translateY(0);
 }
 
 /* ══════════════════════════════
