@@ -211,20 +211,37 @@ p, a, li   { font-family: var(--font-body); }
   }
 
   .btn-reservar {
-    margin: 20px;
-    font-family: var(--font-body);
-    background-color: var(--color-button);
-    border: none;
-    border-radius: 20px;
-    padding: 5px;
-    color: #ffffff;
-    width: 150px !important;
-  }
+  display: inline-block;      /* 👈 necesario para que <a> se vea como botón */
+  margin: 10px;
+  margin-top: 20px;
+  font-family: var(--font-body);
+  background-color: var(--color-button);
+  border: none;
+  border-radius: 20px;
+  padding: 5px;
+  color: #ffffff !important;  /* 👈 el !important evita que <a> pise el color */
+  width: 150px !important;
+  text-decoration: none;      /* 👈 quita el subrayado del link */
+  text-align: center;         /* 👈 centra el texto */
+}
 
-  .btn-reservar:hover {
-    background-color: var(--color-accent) !important;
-    color: #1B4015;
-  }
+.btn-reservar:hover {
+  background-color: var(--color-accent) !important;
+  color: #1B4015 !important;
+}
+
+.btn-ver-detalles {
+  background-color: var(--color-opcional);
+  border: 2px solid var(--color-opcional)!important;
+  color: var(--color-secondary)!important;
+  margin-top: 6px;
+}
+
+.btn-ver-detalles:hover {
+  background-color: var(--color-accent)!important;
+  border: 2px solid var(--color-accent)!important;
+  color: var(--color-opcional) !important;
+}
 
   .linea{
     margin-bottom: 80px !important;
