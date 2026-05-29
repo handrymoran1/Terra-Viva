@@ -6,7 +6,8 @@ const habitacionesIniciales = [
     nombre: "Habitación Suite Colonial",
     precio: 180000,
     imagen: "../assets/habitaciones/habitacion1.png",
-    descripcion: "Decoración cálida con elementos en madera y tonos suaves, ambiente relajante y armonioso.",
+    descripcion:
+      "Decoración cálida con elementos en madera y tonos suaves, ambiente relajante y armonioso.",
     url: "../html/habit_suite_colonial.html",
     mostrar: true,
   },
@@ -15,7 +16,8 @@ const habitacionesIniciales = [
     nombre: "Habitación con Balcón",
     precio: 330000,
     imagen: "../assets/habitaciones/habitacion3.png",
-    descripcion: "Habitación con cama doble y balcón privado, perfecta para disfrutar del aire libre y una vista agradable.",
+    descripcion:
+      "Habitación con cama doble y balcón privado, perfecta para disfrutar del aire libre y una vista agradable.",
     url: "../html/habit_doble_balcon.html",
     mostrar: true,
   },
@@ -24,7 +26,8 @@ const habitacionesIniciales = [
     nombre: "Habitación Doble Ejecutiva",
     precio: 320000,
     imagen: "../assets/habitaciones/habitacion6.png",
-    descripcion: "Incluye escritorio y buena iluminación, ideal para trabajar y descansar con comodidad. Espacio práctico y funcional.",
+    descripcion:
+      "Incluye escritorio y buena iluminación, ideal para trabajar y descansar con comodidad. Espacio práctico y funcional.",
     url: "../html/habit_doble_ejecutiva.html",
     mostrar: true,
   },
@@ -33,7 +36,8 @@ const habitacionesIniciales = [
     nombre: "Habitación Doble Jardín",
     precio: 200000,
     imagen: "../assets/habitaciones/habitacion2.png",
-    descripcion: "Espacio acogedor con vista a zonas verdes y excelente iluminación natural. Perfecta para relajarse.",
+    descripcion:
+      "Espacio acogedor con vista a zonas verdes y excelente iluminación natural. Perfecta para relajarse.",
     url: "../html/habit_doble_jardin.html",
     mostrar: true,
   },
@@ -42,7 +46,8 @@ const habitacionesIniciales = [
     nombre: "Habitación Doble Natural",
     precio: 200000,
     imagen: "../assets/habitaciones/habitacion5.png",
-    descripcion: "Decoración cálida con elementos en madera y tonos suaves. Un ambiente relajante y armonioso.",
+    descripcion:
+      "Decoración cálida con elementos en madera y tonos suaves. Un ambiente relajante y armonioso.",
     url: "../html/habit_doble_natural.html",
     mostrar: true,
   },
@@ -51,7 +56,8 @@ const habitacionesIniciales = [
     nombre: "Habitación Doble Plus",
     precio: 350000,
     imagen: "../assets/habitaciones/habitacion9.png",
-    descripcion: "Habitación amplia con 2 camas dobles, ideal para familias o grupos que buscan mayor comodidad en su estadía.",
+    descripcion:
+      "Habitación amplia con 2 camas dobles, ideal para familias o grupos que buscan mayor comodidad en su estadía.",
     url: "../html/habit_doble_plus.html",
     mostrar: true,
   },
@@ -60,7 +66,8 @@ const habitacionesIniciales = [
     nombre: "Habitación Romántica",
     precio: 250000,
     imagen: "../assets/habitaciones/habitacion8.png",
-    descripcion: "Ambiente íntimo con iluminación cálida y decoración acogedora, ideal para parejas. Espacio romántico y relajante.",
+    descripcion:
+      "Ambiente íntimo con iluminación cálida y decoración acogedora, ideal para parejas. Espacio romántico y relajante.",
     url: "../html/habit_doble_romantica.html",
     mostrar: true,
   },
@@ -69,7 +76,8 @@ const habitacionesIniciales = [
     nombre: "Habitación Suite Premium",
     precio: 450000,
     imagen: "../assets/habitaciones/habitacion10.png",
-    descripcion: "La opción más exclusiva, con diseño moderno, cama amplia y detalles elegantes.",
+    descripcion:
+      "La opción más exclusiva, con diseño moderno, cama amplia y detalles elegantes.",
     url: "../html/habit_premium.html",
     mostrar: true,
   },
@@ -78,7 +86,8 @@ const habitacionesIniciales = [
     nombre: "Habitación Doble Superior",
     precio: 220000,
     imagen: "../assets/habitaciones/habitacion4.png",
-    descripcion: "Habitación amplia y elegante, con detalles modernos que brindan mayor comodidad. Espacio cómodo y acogedor.",
+    descripcion:
+      "Habitación amplia y elegante, con detalles modernos que brindan mayor comodidad. Espacio cómodo y acogedor.",
     url: "../html/habitacion_doble_superior.html",
     mostrar: true,
   },
@@ -87,7 +96,8 @@ const habitacionesIniciales = [
     nombre: "Habitación Familiar/Grupal",
     precio: 250000,
     imagen: "../assets/habitaciones/habitacion7.png",
-    descripcion: "Habitación con 4 camas individuales, ideal para familias o grupos que buscan comodidad y descanso compartido.",
+    descripcion:
+      "Habitación con 4 camas individuales, ideal para familias o grupos que buscan comodidad y descanso compartido.",
     url: "../html/habitacion_familiar.html",
     mostrar: true,
   },
@@ -404,6 +414,32 @@ function ajustarListaAdmin() {
     `;
     contenedor.appendChild(item);
   });
+}
+
+function reservarDesdeDetalle(e, idHabitacion) {
+  e.preventDefault();
+  var habitaciones = obtenerHabitaciones();
+  var hab = null;
+  for (var i = 0; i < habitaciones.length; i++) {
+    if (habitaciones[i].id === idHabitacion) {
+      hab = habitaciones[i];
+      break;
+    }
+  }
+  if (!hab) {
+    alert("No se encontró la información de esta habitación.");
+    return;
+  }
+  sessionStorage.setItem("habitacionSeleccionada", JSON.stringify(hab));
+  if (sessionStorage.getItem("busquedaHabitaciones")) {
+    window.location.href = "./detalleReserva.html";
+  } else {
+    if (
+      confirm("Primero debes seleccionar fechas en el inicio. ¿Ir allá ahora?")
+    ) {
+      window.location.href = "../index.html";
+    }
+  }
 }
 
 function limpiarBusqueda() {
