@@ -402,7 +402,7 @@ p, a, li   { font-family: var(--font-body); }
 
 /* ══════════════════════════════
    CARD DE HABITACIÓN
-══════════════════════════════ */
+══════════════════════════ */
 .room-card {
   border: none;
   border-radius: 18px;
@@ -845,3 +845,52 @@ p, a, li   { font-family: var(--font-body); }
 }
 
 /* *********************************************************** */
+/* ══════════════════════════════
+   SWEETALERT PERSONALIZADO
+══════════════════════════════ */
+.swal-title-custom {
+  font-family: var(--font-title) !important;
+  color: var(--color-opcional) !important;
+}
+
+.swal-html-container-custom p,
+.swal-html-container-custom label {
+  font-family: var(--font-body) !important;
+  color: var(--color-dark) !important;
+  font-size: 1.15rem; 
+}
+
+.custom-credit-card-icon {
+  font-size: 4rem;
+  color: var(--color-accent);
+}
+
+.swal-confirm-button-custom {
+  background-color: var(--color-button) !important;
+  font-family: var(--font-body) !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  transition: background .2s ease !important;
+}
+
+.swal-confirm-button-custom:hover {
+  background-color: var(--color-opcional) !important;
+}
+
+.swal-cancel-button-custom {
+  background-color: #6c757d !important;
+  font-family: var(--font-body) !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+}
+
+#toggle-card-number {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
