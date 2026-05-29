@@ -1,86 +1,94 @@
 const CLAVE_HABITACIONES = "habitacionesHuellas";
 
 const habitacionesIniciales = [
-  // Datos de para inicializar las habitaciones
   {
     id: 1,
-    nombre: "Habitación 1",
-    precio: 340000,
+    nombre: "Habitación Suite Colonial",
+    precio: 180000,
     imagen: "../assets/habitaciones/habitacion1.png",
-    descripcion:
-      "Elegante esia cotancn cama gfgfgfgfgdfgdfgddfgdfgdfgdfghghghg.",
+    descripcion: "Decoración cálida con elementos en madera y tonos suaves, ambiente relajante y armonioso.",
+    url: "../html/habit_suite_colonial.html",
     mostrar: true,
   },
   {
     id: 2,
-    nombre: "Habitación 2",
-    precio: 700000,
-    imagen: "../assets/habitaciones/habitacion2.png",
-    descripcion: "Suite de lujo con balcón.",
+    nombre: "Habitación con Balcón",
+    precio: 330000,
+    imagen: "../assets/habitaciones/habitacion3.png",
+    descripcion: "Habitación con cama doble y balcón privado, perfecta para disfrutar del aire libre y una vista agradable.",
+    url: "../html/habit_doble_balcon.html",
     mostrar: true,
   },
   {
     id: 3,
-    nombre: "Habitación 3",
-    precio: 250000,
-    imagen: "../assets/habitaciones/habitacion3.png",
-    descripcion: "Habitación temática botánica.",
+    nombre: "Habitación Doble Ejecutiva",
+    precio: 320000,
+    imagen: "../assets/habitaciones/habitacion6.png",
+    descripcion: "Incluye escritorio y buena iluminación, ideal para trabajar y descansar con comodidad. Espacio práctico y funcional.",
+    url: "../html/habit_doble_ejecutiva.html",
     mostrar: true,
   },
   {
     id: 4,
-    nombre: "Habitación 4",
-    precio: 800000,
-    imagen: "../assets/habitaciones/habitacion4.png",
-    descripcion: "Suite familiar espaciosa.",
+    nombre: "Habitación Doble Jardín",
+    precio: 200000,
+    imagen: "../assets/habitaciones/habitacion2.png",
+    descripcion: "Espacio acogedor con vista a zonas verdes y excelente iluminación natural. Perfecta para relajarse.",
+    url: "../html/habit_doble_jardin.html",
     mostrar: true,
   },
   {
     id: 5,
-    nombre: "Habitación 5",
+    nombre: "Habitación Doble Natural",
     precio: 200000,
     imagen: "../assets/habitaciones/habitacion5.png",
-    descripcion: "Opción cómoda y funcional.",
+    descripcion: "Decoración cálida con elementos en madera y tonos suaves. Un ambiente relajante y armonioso.",
+    url: "../html/habit_doble_natural.html",
     mostrar: true,
   },
   {
     id: 6,
-    nombre: "Habitación 6",
-    precio: 420000,
-    imagen: "../assets/habitaciones/habitacion6.png",
-    descripcion: "Vista a la ciudad, cama Queen.",
+    nombre: "Habitación Doble Plus",
+    precio: 350000,
+    imagen: "../assets/habitaciones/habitacion9.png",
+    descripcion: "Habitación amplia con 2 camas dobles, ideal para familias o grupos que buscan mayor comodidad en su estadía.",
+    url: "../html/habit_doble_plus.html",
     mostrar: true,
   },
   {
     id: 7,
-    nombre: "Habitación 7",
-    precio: 550000,
-    imagen: "../assets/habitaciones/habitacion7.png",
-    descripcion: "Con jacuzzi y terraza.",
+    nombre: "Habitación Romántica",
+    precio: 250000,
+    imagen: "../assets/habitaciones/habitacion8.png",
+    descripcion: "Ambiente íntimo con iluminación cálida y decoración acogedora, ideal para parejas. Espacio romántico y relajante.",
+    url: "../html/habit_doble_romantica.html",
     mostrar: true,
   },
   {
     id: 8,
-    nombre: "Habitación 8",
-    precio: 310000,
-    imagen: "../assets/habitaciones/habitacion8.png",
-    descripcion: "Económica pero acogedora.",
+    nombre: "Habitación Suite Premium",
+    precio: 450000,
+    imagen: "../assets/habitaciones/habitacion10.png",
+    descripcion: "La opción más exclusiva, con diseño moderno, cama amplia y detalles elegantes.",
+    url: "../html/habit_premium.html",
     mostrar: true,
   },
   {
     id: 9,
-    nombre: "Habitación 9",
-    precio: 670000,
-    imagen: "../assets/habitaciones/habitacion9.png",
-    descripcion: "Doble con vistas panorámicas.",
+    nombre: "Habitación Doble Superior",
+    precio: 220000,
+    imagen: "../assets/habitaciones/habitacion4.png",
+    descripcion: "Habitación amplia y elegante, con detalles modernos que brindan mayor comodidad. Espacio cómodo y acogedor.",
+    url: "../html/habitacion_doble_superior.html",
     mostrar: true,
   },
   {
     id: 10,
-    nombre: "Habitación 10",
-    precio: 920000,
-    imagen: "../assets/habitaciones/habitacion10.png",
-    descripcion: "Presidencial con servicio 24h.",
+    nombre: "Habitación Familiar/Grupal",
+    precio: 250000,
+    imagen: "../assets/habitaciones/habitacion7.png",
+    descripcion: "Habitación con 4 camas individuales, ideal para familias o grupos que buscan comodidad y descanso compartido.",
+    url: "../html/habitacion_familiar.html",
     mostrar: true,
   },
 ];
@@ -126,6 +134,7 @@ function agregarHabitacion(nombre, precio, descripcion, imagen) {
     precio: parseFloat(precio),
     descripcion: descripcion || "",
     imagen: imagen || "",
+    url: "",
     mostrar: true,
   };
   habitaciones.push(nueva);
@@ -140,7 +149,7 @@ function editarHabitacion(id, nombre, precio, descripcion, imagen) {
   habitaciones[index].nombre = nombre;
   habitaciones[index].precio = parseFloat(precio);
   habitaciones[index].descripcion = descripcion || "";
-  if (imagen !== undefined) habitaciones[index].imagen = imagen; // si no se pasa, mantiene la anterior
+  if (imagen !== undefined) habitaciones[index].imagen = imagen;
   guardarHabitaciones(habitaciones);
   return true;
 }
@@ -174,18 +183,17 @@ function ajustarCatalogo() {
   const todasLasHabitaciones = obtenerHabitaciones();
   contenedor.innerHTML = "";
   let hayHabitacionesVisibles = false;
-  //aquí recorremos una por una de las habitaciones
+
   for (let i = 0; i < todasLasHabitaciones.length; i++) {
     const habitacion = todasLasHabitaciones[i];
 
-    // Si la habitacion no esta marcada para mostrarse nos la saltamos
     if (habitacion.mostrar === false) {
       continue;
     }
     hayHabitacionesVisibles = true;
 
     const col = document.createElement("div");
-    col.className = "col"; // clase de bootstrap
+    col.className = "col";
 
     const imagenSrc = habitacion.imagen || placeholderImagen();
 
@@ -197,10 +205,11 @@ function ajustarCatalogo() {
           <p class="precio mb-2">$${habitacion.precio.toLocaleString("es-CO")} / noche</p>
           <p class="card-text texto-card-habitacion">${habitacion.descripcion || ""}</p>
           <button class="btn-reservar" data-id="${habitacion.id}">Reservar</button>
+          <a href="${habitacion.url || '#'}" class="btn-reservar btn-ver-detalles">Ver detalles</a>
         </div>
       </div>
     `;
-    contenedor.appendChild(col); //aquí estoy agregando al DOM
+    contenedor.appendChild(col);
   }
 
   if (hayHabitacionesVisibles === false) {
@@ -212,15 +221,16 @@ function ajustarCatalogo() {
 
   for (let j = 0; j < botones.length; j++) {
     botones[j].addEventListener("click", function (e) {
-      const idString = this.dataset.id; //aquí obtenemos el ID del atributo data-id
-      const idNum = parseInt(idString); //y con esto lo convertimos a int
+      const idString = this.dataset.id;
+      if (!idString) return; // el <a> de ver detalles no tiene data-id, lo ignoramos
+
+      const idNum = parseInt(idString);
 
       let habSeleccionada = null;
       for (let k = 0; k < todasLasHabitaciones.length; k++) {
         if (todasLasHabitaciones[k].id === idNum) {
           habSeleccionada = todasLasHabitaciones[k];
           break;
-          //esto era para buscar la habitación por id
         }
       }
 
@@ -266,7 +276,7 @@ function actualizarTodosLosContadores() {
     spanOcupadas.textContent = cantOcupadas;
   }
 }
-// Función simple para pintar la lista del admin
+
 function pintarListaAdmin() {
   const contenedor = document.getElementById("listaHabitacionesAdmin");
   if (!contenedor) return;
@@ -274,11 +284,9 @@ function pintarListaAdmin() {
   const habitaciones = obtenerHabitaciones();
   contenedor.innerHTML = "";
 
-  // Usamos un ciclo for clásico como te gusta
   for (let i = 0; i < habitaciones.length; i++) {
     const hab = habitaciones[i];
 
-    // Definimos textos y colores según el estado
     let estadoTexto = "";
     let estadoColor = "";
     let textoBtnAccion = "";
@@ -319,58 +327,49 @@ function pintarListaAdmin() {
   }
 }
 
-// Función simple para activar los botones del admin
 function activarEventosAdmin() {
   const contenedor = document.getElementById("listaHabitacionesAdmin");
   if (!contenedor) return;
 
-  // Delegación de eventos: escuchamos clics en el contenedor padre
   contenedor.addEventListener("click", function (e) {
-    // 1. Lógica para ELIMINAR
     if (e.target.classList.contains("btn-eliminar")) {
       const idStr = e.target.dataset.id;
       const idNum = parseInt(idStr);
 
       if (confirm("¿Seguro quieres eliminar esta habitación?")) {
-        eliminarHabitacion(idNum); // Usamos tu función CRUD existente
-        pintarListaAdmin(); // Volvemos a pintar
-        ajustarCatalogo(); // Actualizamos el catálogo público
-        actualizarTodosLosContadores(); // Actualizamos números
+        eliminarHabitacion(idNum);
+        pintarListaAdmin();
+        ajustarCatalogo();
+        actualizarTodosLosContadores();
       }
     }
 
-    // 2. Lógica para EDITAR
     if (e.target.classList.contains("btn-editar")) {
       const idStr = e.target.dataset.id;
       const idNum = parseInt(idStr);
-      cargarFormularioEdicion(idNum); // Usamos tu función existente
+      cargarFormularioEdicion(idNum);
     }
 
-    // 3. Lógica para TOGGLE VISIBILIDAD (Mostrar/Ocultar)
     if (e.target.classList.contains("toggle-visibilidad")) {
       const idStr = e.target.dataset.id;
       const idNum = parseInt(idStr);
       const estadoActualStr = e.target.dataset.mostrar;
 
-      // Convertimos el string "true"/"false" a booleano real
       let estadoActual = false;
       if (estadoActualStr === "true") {
         estadoActual = true;
       }
 
-      // Invertimos el estado
       actualizarVisibilidadHabitacion(idNum, !estadoActual);
 
-      // Refrescamos todo
       pintarListaAdmin();
       ajustarCatalogo();
       actualizarTodosLosContadores();
     }
   });
 }
-// ajustar imagen
 
-let imagenBase64 = null; // almacena la imagen seleccionada en base64
+let imagenBase64 = null;
 
 function ajustarListaAdmin() {
   const contenedor = document.getElementById("listaHabitacionesAdmin");
@@ -453,10 +452,9 @@ document.addEventListener("DOMContentLoaded", function () {
   mostrarResumenBusqueda();
 
   if (document.getElementById("listaHabitacionesAdmin")) {
-    pintarListaAdmin(); // colorea la lista
-    activarEventosAdmin(); // ahora activamos los botones
+    pintarListaAdmin();
+    activarEventosAdmin();
 
-    //este es el formulario
     const form = document.getElementById("formularioHabitacion");
     if (form) form.addEventListener("submit", manejarEnvioFormulario);
 
@@ -476,12 +474,13 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+
   const btnCerrarSesion = document.getElementById("btnCerrarSesion");
   console.log("¿Botón encontrado?", btnCerrarSesion);
 
   if (btnCerrarSesion) {
     btnCerrarSesion.addEventListener("click", function () {
-      console.log("Intentando cerrar sesión..."); // Para depuración
+      console.log("Intentando cerrar sesión...");
       localStorage.removeItem("usuarioLogueado");
       alert("Has cerrado sesión correctamente.");
       window.location.href = "../index.html";
@@ -489,25 +488,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-// actulizamos segun logeo del usuario
 function actualizarNavbar() {
   const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
-  
+
   const divNoLogueado = document.getElementById("navNoLogueado");
   const divLogueado = document.getElementById("navLogueado");
   const navAvatar = document.getElementById("navAvatar");
 
   if (usuario) {
-    if(divNoLogueado) divNoLogueado.classList.add("d-none"); // Ocultar Registrar/Login
-    if(divLogueado) divLogueado.classList.remove("d-none");  // Mostrar Perfil/Cerrar Sesión
-    
-    if(navAvatar && usuario.nombre) {
+    if (divNoLogueado) divNoLogueado.classList.add("d-none");
+    if (divLogueado) divLogueado.classList.remove("d-none");
+
+    if (navAvatar && usuario.nombre) {
       navAvatar.textContent = usuario.nombre.charAt(0).toUpperCase();
     }
   } else {
-    if(divNoLogueado) divNoLogueado.classList.remove("d-none"); // Mostrar Registrar/Login
-    if(divLogueado) divLogueado.classList.add("d-none");        // Ocultar Perfil/Cerrar Sesión
+    if (divNoLogueado) divNoLogueado.classList.remove("d-none");
+    if (divLogueado) divLogueado.classList.add("d-none");
   }
 }
 
