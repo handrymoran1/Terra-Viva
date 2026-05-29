@@ -26,7 +26,12 @@ p, a, li, button, input, select, label {
   font-family: var(--font-body);
 }
 
-/* ══════════════════════════════
+
+.custom-navbar {
+  background-color: var(--color-opcional);
+}
+
+* ══════════════════════════════
    NAVBAR
 ══════════════════════════════ */
 .custom-navbar {
@@ -51,11 +56,17 @@ p, a, li, button, input, select, label {
   transform: translateY(-2px);
 }
 
+#navNoLogueado {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
 .custom-btn-primary {
   font-family: var(--font-body);
   font-size: 17px;
   background-color: var(--color-button);
-  border: none;
+  border: 2px solid var(--color-button) !important;
   color: #ffffff;
   width: 150px !important;
   display: inline-flex;        
@@ -67,6 +78,7 @@ p, a, li, button, input, select, label {
 .custom-btn-primary:hover {
   background-color: var(--color-secondary) !important;
   color: var(--color-dark);
+  border: 2px solid var(--color-secondary) !important;
 }
 
 .custom-btn-secondary {

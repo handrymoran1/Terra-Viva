@@ -22,6 +22,13 @@ p, a, li   { font-family: var(--font-body); }
   background-color: var(--color-opcional);
 }
 
+* ══════════════════════════════
+   NAVBAR
+══════════════════════════════ */
+.custom-navbar {
+  background-color: var(--color-opcional);
+}
+
 .navbar-brand {
   font-family: var(--font-title);
   font-size: 35px;
@@ -40,18 +47,29 @@ p, a, li   { font-family: var(--font-body); }
   transform: translateY(-2px);
 }
 
+#navNoLogueado {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
 .custom-btn-primary {
   font-family: var(--font-body);
   font-size: 17px;
   background-color: var(--color-button);
-  border: none;
+  border: 2px solid var(--color-button) !important;
   color: #ffffff;
   width: 150px !important;
+  display: inline-flex;        
+  align-items: center;         
+  justify-content: center;     
+  text-align: center;          
 }
 
 .custom-btn-primary:hover {
   background-color: var(--color-secondary) !important;
   color: var(--color-dark);
+  border: 2px solid var(--color-secondary) !important;
 }
 
 .custom-btn-secondary {
