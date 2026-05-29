@@ -1,4 +1,26 @@
+<<<<<<< HEAD
 let btnBuscarDisponibilidad = document.getElementById("btnBuscarDisponibilidad");
+=======
+const hoy = new Date().toISOString().split("T")[0];
+const inputLlegada = document.getElementById("fechaLlegada");
+const inputSalida = document.getElementById("fechaSalida");
+
+inputLlegada.min = hoy;
+inputSalida.min = hoy;
+
+inputLlegada.addEventListener("change", function () {
+  if (this.value) {
+    inputSalida.min = this.value;
+    if (inputSalida.value && inputSalida.value <= this.value) {
+      inputSalida.value = "";
+    }
+  }
+});
+
+let btnBuscarDisponibilidad = document.getElementById(
+  "btnBuscarDisponibilidad",
+);
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
 
 btnBuscarDisponibilidad.addEventListener("click", function (e) {
   e.preventDefault();
@@ -27,6 +49,7 @@ btnBuscarDisponibilidad.addEventListener("click", function (e) {
   // [CAMBIO] ruta relativa corregida
   window.location.href = "./html/habitaciones.html";
 });
+<<<<<<< HEAD
 
 // [CAMBIO] funciones de navegación (iguales en todos los JS)
 function actualizarNavbar() {
@@ -57,3 +80,5 @@ function cerrarSesionManual() {
 document.addEventListener("DOMContentLoaded", function() {
   actualizarNavbar();
 });
+=======
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e

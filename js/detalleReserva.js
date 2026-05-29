@@ -64,10 +64,19 @@ document.addEventListener("DOMContentLoaded", function () {
       <button class="btn btn-primary" id="btnIrLogin">Iniciar sesión para confirmar</button>`;
     tarjeta.querySelector(".card-body").appendChild(avisoLogin);
 
+<<<<<<< HEAD
     document.getElementById("btnIrLogin").addEventListener("click", function () {
       // [CAMBIO] guardar página a la que volver tras login
       sessionStorage.setItem("redirectAfterLogin", "detalleReserva.html");
       window.location.href = "../html/iniciarSesion.html";
+=======
+      // Limpiamos sesión
+      sessionStorage.removeItem("habitacionSeleccionada");
+      sessionStorage.removeItem("busquedaHabitaciones");
+
+
+      window.location.href = "./perfil_usuario.html";
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     });
   } else {
     // Logueado: habilitar confirmación
@@ -119,6 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+<<<<<<< HEAD
 
 // [CAMBIO] funciones compartidas de navbar
 function actualizarNavbar() {
@@ -143,3 +153,5 @@ function cerrarSesionManual() {
   alert("Has cerrado sesión correctamente.");
   window.location.href = "../index.html";
 }
+=======
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e

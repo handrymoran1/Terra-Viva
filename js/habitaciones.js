@@ -3,82 +3,162 @@ const CLAVE_HABITACIONES = "habitacionesHuellas";
 const habitacionesIniciales = [
   {
     id: 1,
+<<<<<<< HEAD
     nombre: "Suite Colonial",
     precio: 340000,
     imagen: "../assets/habitaciones/habitacion1.png",
     descripcion: "Elegante habitación con cama doble, decoración colonial y vista al patio interior.",
+=======
+    nombre: "Habitación Suite Colonial",
+    precio: 180000,
+    imagen: "../assets/habitaciones/habitacion1.png",
+    descripcion: "Decoración cálida con elementos en madera y tonos suaves, ambiente relajante y armonioso.",
+    url: "../html/habit_suite_colonial.html",
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     mostrar: true,
   },
   {
     id: 2,
+<<<<<<< HEAD
     nombre: "Habitación Doble Superior",
     precio: 250000,
     imagen: "../assets/habitaciones/habitacion4.png",
     descripcion: "Habitación amplia y elegante, con detalles modernos.",
+=======
+    nombre: "Habitación con Balcón",
+    precio: 330000,
+    imagen: "../assets/habitaciones/habitacion3.png",
+    descripcion: "Habitación con cama doble y balcón privado, perfecta para disfrutar del aire libre y una vista agradable.",
+    url: "../html/habit_doble_balcon.html",
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     mostrar: true,
   },
   {
     id: 3,
+<<<<<<< HEAD
     nombre: "Habitación Doble Jardín",
     precio: 200000,
     imagen: "../assets/habitaciones/habitacion2.png",
     descripcion: "Espacio acogedor con vista a zonas verdes y excelente iluminación natural.",
+=======
+    nombre: "Habitación Doble Ejecutiva",
+    precio: 320000,
+    imagen: "../assets/habitaciones/habitacion6.png",
+    descripcion: "Incluye escritorio y buena iluminación, ideal para trabajar y descansar con comodidad. Espacio práctico y funcional.",
+    url: "../html/habit_doble_ejecutiva.html",
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     mostrar: true,
   },
   {
     id: 4,
+<<<<<<< HEAD
     nombre: "Habitación Doble Natural",
     precio: 210000,
     imagen: "../assets/habitaciones/habitacion5.png",
     descripcion: "Decoración cálida con elementos en madera y tonos suaves.",
+=======
+    nombre: "Habitación Doble Jardín",
+    precio: 200000,
+    imagen: "../assets/habitaciones/habitacion2.png",
+    descripcion: "Espacio acogedor con vista a zonas verdes y excelente iluminación natural. Perfecta para relajarse.",
+    url: "../html/habit_doble_jardin.html",
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     mostrar: true,
   },
   {
     id: 5,
+<<<<<<< HEAD
     nombre: "Habitación Doble con Balcón",
     precio: 330000,
     imagen: "../assets/habitaciones/habitacion3.png",
     descripcion: "Cama doble y balcón privado para disfrutar del aire libre.",
+=======
+    nombre: "Habitación Doble Natural",
+    precio: 200000,
+    imagen: "../assets/habitaciones/habitacion5.png",
+    descripcion: "Decoración cálida con elementos en madera y tonos suaves. Un ambiente relajante y armonioso.",
+    url: "../html/habit_doble_natural.html",
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     mostrar: true,
   },
   {
     id: 6,
+<<<<<<< HEAD
     nombre: "Habitación Doble Ejecutiva",
     precio: 220000,
     imagen: "../assets/habitaciones/habitacion6.png",
     descripcion: "Incluye escritorio y buena iluminación, ideal para trabajar y descansar.",
+=======
+    nombre: "Habitación Doble Plus",
+    precio: 350000,
+    imagen: "../assets/habitaciones/habitacion9.png",
+    descripcion: "Habitación amplia con 2 camas dobles, ideal para familias o grupos que buscan mayor comodidad en su estadía.",
+    url: "../html/habit_doble_plus.html",
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     mostrar: true,
   },
   {
     id: 7,
+<<<<<<< HEAD
     nombre: "Habitación Vista Exterior",
     precio: 240000,
     imagen: "../assets/habitaciones/habitacion7.png",
     descripcion: "Habitación luminosa con cama doble y vista exterior.",
+=======
+    nombre: "Habitación Romántica",
+    precio: 250000,
+    imagen: "../assets/habitaciones/habitacion8.png",
+    descripcion: "Ambiente íntimo con iluminación cálida y decoración acogedora, ideal para parejas. Espacio romántico y relajante.",
+    url: "../html/habit_doble_romantica.html",
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     mostrar: true,
   },
   {
     id: 8,
+<<<<<<< HEAD
     nombre: "Habitación Doble Romántica",
     precio: 260000,
     imagen: "../assets/habitaciones/habitacion8.png",
     descripcion: "Ambiente íntimo con iluminación cálida y decoración acogedora.",
+=======
+    nombre: "Habitación Suite Premium",
+    precio: 450000,
+    imagen: "../assets/habitaciones/habitacion10.png",
+    descripcion: "La opción más exclusiva, con diseño moderno, cama amplia y detalles elegantes.",
+    url: "../html/habit_premium.html",
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     mostrar: true,
   },
   {
     id: 9,
+<<<<<<< HEAD
     nombre: "Junior Suite",
     precio: 290000,
     imagen: "../assets/habitaciones/habitacion9.png",
     descripcion: "Espacio amplio con zona de descanso adicional.",
+=======
+    nombre: "Habitación Doble Superior",
+    precio: 220000,
+    imagen: "../assets/habitaciones/habitacion4.png",
+    descripcion: "Habitación amplia y elegante, con detalles modernos que brindan mayor comodidad. Espacio cómodo y acogedor.",
+    url: "../html/habitacion_doble_superior.html",
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     mostrar: true,
   },
   {
     id: 10,
+<<<<<<< HEAD
     nombre: "Suite Premium",
     precio: 330000,
     imagen: "../assets/habitaciones/habitacion10.png",
     descripcion: "La más exclusiva, con cama amplia y diseño moderno.",
+=======
+    nombre: "Habitación Familiar/Grupal",
+    precio: 250000,
+    imagen: "../assets/habitaciones/habitacion7.png",
+    descripcion: "Habitación con 4 camas individuales, ideal para familias o grupos que buscan comodidad y descanso compartido.",
+    url: "../html/habitacion_familiar.html",
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     mostrar: true,
   },
 ];
@@ -117,6 +197,7 @@ function agregarHabitacion(nombre, precio, descripcion, imagen) {
     precio: parseFloat(precio),
     descripcion: descripcion || "",
     imagen: imagen || "",
+    url: "",
     mostrar: true,
   };
   habitaciones.push(nueva);
@@ -164,11 +245,22 @@ function ajustarCatalogo() {
 
   for (let i = 0; i < todasLasHabitaciones.length; i++) {
     const habitacion = todasLasHabitaciones[i];
+<<<<<<< HEAD
     if (!habitacion.mostrar) continue;
+=======
+
+    if (habitacion.mostrar === false) {
+      continue;
+    }
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     hayHabitacionesVisibles = true;
 
     const col = document.createElement("div");
     col.className = "col";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     const imagenSrc = habitacion.imagen || placeholderImagen();
 
     col.innerHTML = `
@@ -179,6 +271,7 @@ function ajustarCatalogo() {
           <p class="precio mb-2">$${habitacion.precio.toLocaleString("es-CO")} / noche</p>
           <p class="card-text texto-card-habitacion">${habitacion.descripcion || ""}</p>
           <button class="btn-reservar" data-id="${habitacion.id}">Reservar</button>
+          <a href="${habitacion.url || '#'}" class="btn-reservar btn-ver-detalles">Ver detalles</a>
         </div>
       </div>
     `;
@@ -193,7 +286,15 @@ function ajustarCatalogo() {
   const botones = document.querySelectorAll(".btn-reservar");
   for (let j = 0; j < botones.length; j++) {
     botones[j].addEventListener("click", function (e) {
+<<<<<<< HEAD
       const idNum = parseInt(this.dataset.id);
+=======
+      const idString = this.dataset.id;
+      if (!idString) return; // el <a> de ver detalles no tiene data-id, lo ignoramos
+
+      const idNum = parseInt(idString);
+
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
       let habSeleccionada = null;
       for (let k = 0; k < todasLasHabitaciones.length; k++) {
         if (todasLasHabitaciones[k].id === idNum) {
@@ -229,17 +330,41 @@ function actualizarTodosLosContadores() {
   }
 }
 
+<<<<<<< HEAD
 // [CAMBIO] pintar lista en panel de administración
+=======
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
 function pintarListaAdmin() {
   const contenedor = document.getElementById("listaHabitacionesAdmin");
   if (!contenedor) return;
   const habitaciones = obtenerHabitaciones();
   contenedor.innerHTML = "";
+<<<<<<< HEAD
   for (let i = 0; i < habitaciones.length; i++) {
     const hab = habitaciones[i];
     const estadoTexto = hab.mostrar ? "Visible" : "Oculto";
     const estadoColor = hab.mostrar ? "success" : "secondary";
     const textoBtnAccion = hab.mostrar ? "Ocultar" : "Mostrar";
+=======
+
+  for (let i = 0; i < habitaciones.length; i++) {
+    const hab = habitaciones[i];
+
+    let estadoTexto = "";
+    let estadoColor = "";
+    let textoBtnAccion = "";
+
+    if (hab.mostrar === true) {
+      estadoTexto = "Visible";
+      estadoColor = "success";
+      textoBtnAccion = "Ocultar";
+    } else {
+      estadoTexto = "Oculto";
+      estadoColor = "secondary";
+      textoBtnAccion = "Mostrar";
+    }
+
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
     const imagenSrc = hab.imagen || placeholderImagen();
 
     const item = document.createElement("div");
@@ -263,6 +388,7 @@ function pintarListaAdmin() {
   }
 }
 
+<<<<<<< HEAD
 // [CAMBIO] activar eventos de botones del admin (delegación)
 function activarEventosAdmin() {
   const contenedor = document.getElementById("listaHabitacionesAdmin");
@@ -271,11 +397,25 @@ function activarEventosAdmin() {
     if (e.target.classList.contains("btn-eliminar")) {
       const id = parseInt(e.target.dataset.id);
       if (eliminarHabitacion(id)) {
+=======
+function activarEventosAdmin() {
+  const contenedor = document.getElementById("listaHabitacionesAdmin");
+  if (!contenedor) return;
+
+  contenedor.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btn-eliminar")) {
+      const idStr = e.target.dataset.id;
+      const idNum = parseInt(idStr);
+
+      if (confirm("¿Seguro quieres eliminar esta habitación?")) {
+        eliminarHabitacion(idNum);
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
         pintarListaAdmin();
         ajustarCatalogo();
         actualizarTodosLosContadores();
       }
     }
+<<<<<<< HEAD
     if (e.target.classList.contains("btn-editar")) {
       const id = parseInt(e.target.dataset.id);
       cargarFormularioEdicion(id);  // definida más abajo
@@ -284,6 +424,27 @@ function activarEventosAdmin() {
       const id = parseInt(e.target.dataset.id);
       const estadoActual = e.target.dataset.mostrar === "true";
       actualizarVisibilidadHabitacion(id, !estadoActual);
+=======
+
+    if (e.target.classList.contains("btn-editar")) {
+      const idStr = e.target.dataset.id;
+      const idNum = parseInt(idStr);
+      cargarFormularioEdicion(idNum);
+    }
+
+    if (e.target.classList.contains("toggle-visibilidad")) {
+      const idStr = e.target.dataset.id;
+      const idNum = parseInt(idStr);
+      const estadoActualStr = e.target.dataset.mostrar;
+
+      let estadoActual = false;
+      if (estadoActualStr === "true") {
+        estadoActual = true;
+      }
+
+      actualizarVisibilidadHabitacion(idNum, !estadoActual);
+
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
       pintarListaAdmin();
       ajustarCatalogo();
       actualizarTodosLosContadores();
@@ -291,8 +452,16 @@ function activarEventosAdmin() {
   });
 }
 
+<<<<<<< HEAD
 // [CAMBIO] variable para almacenar imagen en base64
 let imagenBase64 = null;
+=======
+let imagenBase64 = null;
+
+function ajustarListaAdmin() {
+  const contenedor = document.getElementById("listaHabitacionesAdmin");
+  if (!contenedor) return;
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
 
 // [CAMBIO] cargar formulario de edición
 function cargarFormularioEdicion(id) {
@@ -309,6 +478,7 @@ function cargarFormularioEdicion(id) {
   document.getElementById("tituloFormulario").textContent = "Editar habitación";
 }
 
+<<<<<<< HEAD
 // [CAMBIO] resetear formulario
 function resetFormulario() {
   document.getElementById("habitacionId").value = "";
@@ -346,6 +516,13 @@ function manejarEnvioFormulario(e) {
 }
 
 // [CAMBIO] mostrar resumen de búsqueda en habitaciones.html
+=======
+function limpiarBusqueda() {
+  sessionStorage.removeItem("busquedaHabitaciones");
+  window.location.href = "../index.html";
+}
+
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
 function mostrarResumenBusqueda() {
   const datosBusqueda = JSON.parse(sessionStorage.getItem("busquedaHabitaciones"));
   const divResumen = document.getElementById("resumenBusqueda");
@@ -357,6 +534,14 @@ function mostrarResumenBusqueda() {
     document.getElementById("resumenHuespedes").textContent = datosBusqueda.huespedes;
     divResumen.classList.remove("d-none");
     divResumen.classList.add("d-flex");
+<<<<<<< HEAD
+=======
+
+    const btnNueva = document.getElementById("btnNuevaBusqueda");
+    if (btnNueva) {
+      btnNueva.addEventListener("click", limpiarBusqueda);
+    }
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
   }
 }
 
@@ -392,17 +577,28 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+<<<<<<< HEAD
+=======
+
+  const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+  console.log("¿Botón encontrado?", btnCerrarSesion);
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
 
   // Cerrar sesión desde el dashboard (si existe el botón)
   const btnCerrarSesion = document.getElementById("btnCerrarSesion");
   if (btnCerrarSesion) {
     btnCerrarSesion.addEventListener("click", function () {
+<<<<<<< HEAD
+=======
+      console.log("Intentando cerrar sesión...");
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
       localStorage.removeItem("usuarioLogueado");
       alert("Has cerrado sesión correctamente.");
       window.location.href = "../index.html";
     });
   }
 });
+<<<<<<< HEAD
 
 // [CAMBIO] funciones compartidas de navbar
 function actualizarNavbar() {
@@ -427,3 +623,5 @@ function cerrarSesionManual() {
   alert("Has cerrado sesión correctamente.");
   window.location.href = "../index.html";
 }
+=======
+>>>>>>> 3284d744be6573f5596e6305f8b4d80552134e5e
