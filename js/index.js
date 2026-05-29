@@ -1,3 +1,19 @@
+const hoy = new Date().toISOString().split("T")[0];
+const inputLlegada = document.getElementById("fechaLlegada");
+const inputSalida = document.getElementById("fechaSalida");
+
+inputLlegada.min = hoy;
+inputSalida.min = hoy;
+
+inputLlegada.addEventListener("change", function () {
+  if (this.value) {
+    inputSalida.min = this.value;
+    if (inputSalida.value && inputSalida.value <= this.value) {
+      inputSalida.value = "";
+    }
+  }
+});
+
 let btnBuscarDisponibilidad = document.getElementById(
   "btnBuscarDisponibilidad",
 );
@@ -28,31 +44,3 @@ btnBuscarDisponibilidad.addEventListener("click", function (e) {
 
   window.location.href = "/html/habitaciones.html";
 });
-
-
-// actulizamos segun logeo del usuario
-function actualizarNavbar() {
-  const usuario = JSON.parse(localStorage.getItem("usuarioLogueado"));
-  
-  const divNoLogueado = document.getElementById("navNoLogueado");
-  const divLogueado = document.getElementById("navLogueado");
-  const navAvatar = document.getElementById("navAvatar");
-
-  if (usuario) {
-    if(divNoLogueado) divNoLogueado.classList.add("d-none"); // Ocultar Registrar/Login
-    if(divLogueado) divLogueado.classList.remove("d-none");  // Mostrar Perfil/Cerrar Sesión
-    
-    if(navAvatar && usuario.nombre) {
-      navAvatar.textContent = usuario.nombre.charAt(0).toUpperCase();
-    }
-  } else {
-    if(divNoLogueado) divNoLogueado.classList.remove("d-none"); // Mostrar Registrar/Login
-    if(divLogueado) divLogueado.classList.add("d-none");        // Ocultar Perfil/Cerrar Sesión
-  }
-}
-
-function cerrarSesionManual() {
-  localStorage.removeItem("usuarioLogueado");
-  alert("Has cerrado sesión correctamente.");
-  window.location.href = "../index.html";
-}

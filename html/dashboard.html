@@ -19,6 +19,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <script src="../js/accesoAdmin.js"></script>
   </head>
   <body>
     <!-- NAVBAR-->
@@ -82,30 +84,30 @@
     </nav>
 
     <div class="container">
-        <section>
-            <div class="row">
-              <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Habitaciones disponibles</h5>
-                    <p class="card-text">
-                      <span id="contadorDisponible">0</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Habitaciones ocupadas</h5>
-                    <p class="card-text">
-                      <span id="contadorOcupadas">0</span>
-                    </p>
-                  </div>
-                </div>
+      <section>
+        <div class="row">
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Habitaciones disponibles</h5>
+                <p class="card-text">
+                  <span id="contadorDisponible">0</span>
+                </p>
               </div>
             </div>
-          </section>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Habitaciones ocupadas</h5>
+                <p class="card-text">
+                  <span id="contadorOcupadas">0</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <div class="container my-5">
@@ -233,6 +235,7 @@
 
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/index.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/habitaciones.js"></script>
   </body>
 </html>
